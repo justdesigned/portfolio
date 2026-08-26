@@ -1,0 +1,42 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import ServiceCard from './ServiceCard.astro';
+
+const services = [
+  {
+    number: '01',
+    title: 'Web Development',
+    description: 'From landing pages to complex web apps — fast, accessible, SEO-friendly builds using modern frameworks.',
+    icon: '/figma/a668241a-83e1-4216-aba7-3a43e425c17b.svg',
+  },
+  {
+    number: '02',
+    title: 'UI Implementation',
+    description: 'Pixel-perfect translation of Figma designs into responsive, production-ready code with smooth interactions.',
+    icon: '/figma/a668241a-83e1-4216-aba7-3a43e425c17b.svg',
+  },
+  {
+    number: '03',
+    title: 'Technical Consulting',
+    description: 'Architecture reviews, performance audits, and strategic guidance for teams scaling their frontend stack.',
+    icon: '/figma/a668241a-83e1-4216-aba7-3a43e425c17b.svg',
+  },
+];
+---
+
+<section id="services" class="px-5 py-24 md:px-10 xl:px-20">
+  <div class="mx-auto max-w-[1440px]">
+    <SectionHeader eyebrow="04 / Solutions" title="What I Do" />
+
+    <div class="mt-16 grid gap-6 xl:grid-cols-3">
+      {services.map((service) => (
+        <ServiceCard
+          number={service.number}
+          title={service.title}
+          description={service.description}
+          icon={service.icon}
+        />
+      ))}
+    </div>
+  </div>
+</section>

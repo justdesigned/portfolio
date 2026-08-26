@@ -1,0 +1,42 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import ProjectCard from './ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Finova Dashboard',
+    description: 'Real-time analytics platform for fintech startup. Complex data visualization with performant rendering.',
+    image: '/figma/98e37c9e-8354-41ab-91c4-85a5a52a03c6.png',
+    tags: ['React', 'D3.js', 'Node.js'],
+  },
+  {
+    title: 'Shopline',
+    description: 'E-commerce platform with headless CMS, dynamic filtering, and Stripe integration.',
+    image: '/figma/b94ab6b1-b8fb-4acd-b22c-29deab70013e.png',
+    tags: ['Next.js', 'Sanity', 'Stripe'],
+  },
+  {
+    title: 'DevPulse',
+    description: 'Developer productivity tool with GitHub integration, sprint tracking, and team insights.',
+    image: '/figma/fd4ad5f1-3741-41d4-937b-3fe65b672283.png',
+    tags: ['TypeScript', 'PostgreSQL', 'GraphQL'],
+  },
+];
+---
+
+<section id="projects" class="px-5 py-24 md:px-10 xl:px-20">
+  <div class="mx-auto max-w-[1440px]">
+    <SectionHeader eyebrow="03 / Portfolio" title="Selected Projects" />
+
+    <div class="mt-16 grid gap-6 xl:grid-cols-3">
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          tags={project.tags}
+        />
+      ))}
+    </div>
+  </div>
+</section>

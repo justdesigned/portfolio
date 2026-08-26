@@ -1,0 +1,61 @@
+---
+import SectionHeader from './SectionHeader.astro';
+
+const stats = [
+  { value: '6+', label: 'Years Active', accent: 'text-violet-400' },
+  { value: '40+', label: 'Projects Delivered', accent: 'text-cyan-400' },
+  { value: '99%', label: 'Uptime Standards', accent: 'text-zinc-50' },
+];
+---
+
+<section id="about" class="px-5 py-24 md:px-10 xl:px-20">
+  <div class="mx-auto max-w-[1440px]">
+    <SectionHeader eyebrow="01 / Profile" title="About Me" />
+
+    <div class="mt-16 grid items-center gap-16 lg:grid-cols-[480px_minmax(0,1fr)]">
+      <div class="relative overflow-hidden rounded-2xl border border-white/5 bg-[#141417]">
+        <img src="/figma/a167a793-34f7-4b56-998f-a9858b49c180.png" alt="Alex Carter portrait" class="h-[520px] w-full object-cover" />
+
+        <div class="absolute inset-0 flex flex-col justify-between p-6 font-mono-code text-[12px] uppercase tracking-[0.08em]">
+          <div class="flex items-start justify-between text-cyan-300">
+            <span>[INIT_CORE_PORTRAIT]</span>
+            <span class="text-violet-400">// EST. 2018</span>
+          </div>
+
+          <div class="flex items-center justify-between text-zinc-300">
+            <span>ALEX CARTER</span>
+            <span>SYS: ACTIVE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-7">
+        <p class="font-display text-[clamp(1.8rem,3vw,2.3rem)] font-semibold tracking-[-0.04em] text-zinc-50">
+          Bridging the gap between beautiful design and rigid engineering.
+        </p>
+
+        <div class="space-y-5 text-[1rem] leading-8 text-zinc-400">
+          <p>
+            I'm Alex Carter — a full-stack developer with 6+ years of experience building fast, accessible, and visually refined web applications. I've worked with startups, agencies, and product teams across fintech, e-commerce, and SaaS.
+          </p>
+          <p>
+            My approach: clean code, thoughtful architecture, and design sensibility that bridges the gap between engineering and aesthetics. Currently open to freelance projects and full-time opportunities.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-10 pt-4">
+          {stats.map((stat) => (
+            <div class="flex flex-col gap-1">
+              <span class={`font-display text-[2.25rem] font-extrabold tracking-[-0.06em] ${stat.accent}`}>
+                {stat.value}
+              </span>
+              <span class="font-mono-code text-[11px] uppercase tracking-[0.12em] text-zinc-400">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

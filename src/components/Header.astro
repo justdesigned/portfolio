@@ -1,0 +1,38 @@
+---
+const navItems = [
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Services', href: '#services' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-white/5 bg-[#09090b]/90 backdrop-blur-md">
+  <div class="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-5 md:px-10 xl:px-20">
+    <a href="#top" class="flex items-center gap-3 text-zinc-50" aria-label="Alex Carter home">
+      <span class="flex size-8 items-center justify-center rounded-md bg-violet-500/20 text-xs font-black text-zinc-50">
+        AC
+      </span>
+      <span class="font-display text-lg font-semibold tracking-[-0.04em]">Alex Carter</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class="text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-100"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href="#contact"
+      class="inline-flex items-center rounded-md border border-cyan-400/60 bg-cyan-500/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-cyan-300 transition-colors hover:border-cyan-300 hover:text-cyan-200"
+    >
+      Available for Hire
+    </a>
+  </div>
+</header>

@@ -1,0 +1,39 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import SkillCard from './SkillCard.astro';
+
+const skillGroups = [
+  {
+    title: 'Frontend',
+    icon: '/figma/b28864a1-6eaf-431e-a352-cd7d66c8415b.svg',
+    items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
+  },
+  {
+    title: 'Backend',
+    icon: '/figma/dadec6cd-cedc-49f1-8394-dddb26b7e0ef.svg',
+    items: ['Node.js', 'Express', 'PostgreSQL', 'Redis'],
+  },
+  {
+    title: 'Tools & Workflow',
+    icon: '/figma/31610b32-fcd2-4f59-86a9-6dd0b29a6d0b.svg',
+    items: ['Git', 'Docker', 'Vercel', 'Figma'],
+  },
+  {
+    title: 'Other',
+    icon: '/figma/96e92d2a-af11-4ae9-bf8e-1e0e182e8d04.svg',
+    items: ['REST APIs', 'GraphQL', 'CI/CD', 'Testing'],
+  },
+];
+---
+
+<section id="skills" class="px-5 py-24 md:px-10 xl:px-20">
+  <div class="mx-auto max-w-[1440px]">
+    <SectionHeader eyebrow="02 / Expertise" title="Tech Stack" />
+
+    <div class="mt-16 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+      {skillGroups.map((group) => (
+        <SkillCard title={group.title} icon={group.icon} items={group.items} />
+      ))}
+    </div>
+  </div>
+</section>
