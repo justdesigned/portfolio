@@ -37,16 +37,16 @@ src/components/
 ```astro
 ---
 interface Props {
-  title: string;
-  description?: string;
+	title: string;
+	description?: string;
 }
 
 const { title, description } = Astro.props;
 ---
 
 <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
-  <h2 class="text-2xl font-bold text-slate-900">{title}</h2>
-  {description && <p class="text-slate-600 mt-2">{description}</p>}
+	<h2 class="text-2xl font-bold text-slate-900">{title}</h2>
+	{description && <p class="text-slate-600 mt-2">{description}</p>}
 </div>
 ```
 
@@ -63,9 +63,9 @@ export default function ComponentName({
 	description,
 }: Props): JSX.Element {
 	return (
-		<div className='p-6 bg-white rounded-lg shadow-md border border-gray-200'>
-			<h2 className='text-2xl font-bold text-slate-900'>{title}</h2>
-			{description && <p className='text-slate-600 mt-2'>{description}</p>}
+		<div className="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+			<h2 className="text-2xl font-bold text-slate-900">{title}</h2>
+			{description && <p className="text-slate-600 mt-2">{description}</p>}
 		</div>
 	);
 }

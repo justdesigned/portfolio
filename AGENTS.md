@@ -40,23 +40,25 @@ Manage the development server, builds, and preview environment.
 ### Start Development
 
 ```bash
-astro dev --background    # Recommended - keeps terminal free
-astro dev                  # Foreground mode with live output
+pnpm dev                  # Start Astro dev server
 ```
 
-### Manage Server
+### Linting & Formatting
 
 ```bash
-astro dev status          # Check if server is running
-astro dev logs            # View recent server logs
-astro dev stop            # Stop background server
+pnpm lint                 # Run all linters (ESLint + Stylelint + Prettier)
+pnpm lint:eslint          # Run ESLint on JS/TS/Astro files
+pnpm lint:style           # Run Stylelint on CSS files
+pnpm format               # Format all files with Prettier
+pnpm format:check         # Check if files are formatted
+pnpm lint:fix             # Auto-fix all issues (ESLint + Stylelint + Prettier)
 ```
 
 ### Build & Preview
 
 ```bash
-astro build               # Production build
-astro preview             # Preview production build locally
+pnpm build                # Production build
+pnpm preview              # Preview production build locally
 ```
 
 ---
@@ -68,8 +70,40 @@ src/
 ├── pages/       # Routes (auto-generated from filenames)
 ├── components/  # Reusable components
 ├── layouts/     # Page layouts and templates
+├── styles/      # Global styles (Tailwind CSS)
 └── assets/      # Images, fonts, static files
 ```
+
+---
+
+## Code Quality Tools
+
+### ESLint
+
+- **Version**: 10.9.1
+- **Config**: Modern flat config (`eslint.config.js`)
+- **Plugins**: TypeScript, React, Astro, JSX a11y, Import
+- **Features**: Auto-fix on save, strict TypeScript rules, accessibility checks
+
+### Stylelint
+
+- **Version**: 17.14.1
+- **Config**: `.stylelintrc.cjs`
+- **Features**: CSS best practices, Tailwind CSS support
+- **Files**: Lints `src/**/*.css`
+
+### Prettier
+
+- **Version**: 3.9.6
+- **Config**: `.prettierrc.js`
+- **Plugin**: prettier-plugin-astro (0.14.1)
+- **Features**: Auto-format on save, consistent code style
+
+### VS Code Integration
+
+- Auto-fix on save enabled for all tools
+- Configured in `.vscode/settings.json`
+- Requires extensions: ESLint, Stylelint, Prettier
 
 ---
 

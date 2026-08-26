@@ -72,9 +72,7 @@ export default defineConfig({
 ```js
 export default defineConfig({
 	vite: {
-		plugins: [
-			/* ... */
-		],
+		plugins: [/* ... */],
 		ssr: {
 			external: ['package-name'],
 		},
@@ -109,7 +107,7 @@ Use Tailwind utility classes directly in your components:
 
 ```astro
 <div class="p-6 bg-white rounded-lg shadow-md">
-  <h1 class="text-2xl font-bold text-slate-900">Hello</h1>
+	<h1 class="text-2xl font-bold text-slate-900">Hello</h1>
 </div>
 ```
 

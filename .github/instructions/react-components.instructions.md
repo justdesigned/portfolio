@@ -126,17 +126,18 @@ export default function ContactForm(): JSX.Element {
 	};
 
 	return (
-		<form onSubmit={handleSubmit} className='space-y-4'>
+		<form onSubmit={handleSubmit} className="space-y-4">
 			<input
-				type='email'
+				type="email"
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}
-				placeholder='Email'
-				className='w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500'
+				placeholder="Email"
+				className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
 			/>
 			<button
-				type='submit'
-				className='w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition'>
+				type="submit"
+				className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+			>
 				Submit
 			</button>
 		</form>
@@ -162,9 +163,9 @@ export default function DataComponent(): JSX.Element {
 			});
 	}, []);
 
-	if (loading) return <p className='text-slate-600'>Loading...</p>;
+	if (loading) return <p className="text-slate-600">Loading...</p>;
 	return (
-		<div className='p-4 bg-white rounded border border-gray-200'>
+		<div className="p-4 bg-white rounded border border-gray-200">
 			{JSON.stringify(data)}
 		</div>
 	);
@@ -177,8 +178,9 @@ export default function DataComponent(): JSX.Element {
 export default function Button({ label, onClick }: Props): JSX.Element {
 	return (
 		<button
-			className='px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600'
-			onClick={onClick}>
+			className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+			onClick={onClick}
+		>
 			{label}
 		</button>
 	);

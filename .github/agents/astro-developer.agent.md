@@ -41,12 +41,33 @@ A specialized agent focused on Astro framework development for portfolio project
 - CSS scope management
 - Bundle size reduction
 
+## Code Quality Standards
+
+### Linting & Formatting
+
+- **Always run linters before committing**: `pnpm lint`
+- **Auto-fix issues when possible**: `pnpm lint:fix`
+- **ESLint**: Enforces TypeScript, React, and Astro best practices
+- **Stylelint**: Validates CSS with Tailwind compatibility
+- **Prettier**: Maintains consistent code formatting
+
+### Best Practices
+
+- Use TypeScript interfaces for all component props
+- Follow Astro's island architecture for optimal performance
+- Prefer Tailwind CSS classes over scoped styles
+- Ensure accessibility with semantic HTML and ARIA attributes
+- Keep components small and reusable
+- Use proper import ordering (configured in ESLint)
+
 ## Tool Preferences
 
-- Run commands in background mode when possible
-- Always verify changes in dev server before production build
+- Run linters automatically before builds
+- Use `pnpm lint:fix` to auto-correct issues
+- Verify changes in dev server before production build
 - Use TypeScript for type safety
 - Leverage Astro's built-in optimizations
+- Enable VS Code auto-fix on save
 
 ## Context
 

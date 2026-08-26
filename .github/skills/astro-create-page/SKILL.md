@@ -32,9 +32,9 @@ const pageTitle = 'Page Title';
 ---
 
 <Layout title={pageTitle}>
-  <h1>{pageTitle}</h1>
+	<h1>{pageTitle}</h1>
 
-  {/* Page content */}
+	{/* Page content */}
 </Layout>
 ```
 
@@ -45,18 +45,18 @@ const pageTitle = 'Page Title';
 import Layout from '../layouts/Layout.astro';
 
 export const getStaticPaths = () => {
-  return [
-    { params: { slug: 'first-post' } },
-    { params: { slug: 'second-post' } },
-  ];
+	return [
+		{ params: { slug: 'first-post' } },
+		{ params: { slug: 'second-post' } },
+	];
 };
 
 const { slug } = Astro.params;
 ---
 
 <Layout title={slug}>
-  <h1>{slug}</h1>
-  {/* Dynamic content */}
+	<h1>{slug}</h1>
+	{/* Dynamic content */}
 </Layout>
 ```
 
@@ -69,8 +69,8 @@ import InteractiveComponent from '../components/Interactive';
 ---
 
 <Layout>
-  <h1>Page with React Component</h1>
-  <InteractiveComponent client:load />
+	<h1>Page with React Component</h1>
+	<InteractiveComponent client:load />
 </Layout>
 ```
 

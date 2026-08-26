@@ -15,7 +15,7 @@ Astro components use a triple-dash separator to divide frontmatter from template
 import Layout from '../layouts/Layout.astro';
 
 interface Props {
-  title: string;
+	title: string;
 }
 
 const { title } = Astro.props;
@@ -24,8 +24,8 @@ const computedValue = Math.random();
 
 <!-- HTML template with Tailwind classes -->
 <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-  <h1 class="text-2xl font-bold text-slate-900">{title}</h1>
-  <p class="text-slate-600">{computedValue}</p>
+	<h1 class="text-2xl font-bold text-slate-900">{title}</h1>
+	<p class="text-slate-600">{computedValue}</p>
 </div>
 ```
 
@@ -38,9 +38,9 @@ Define component properties with TypeScript interfaces:
 ```astro
 ---
 interface Props {
-  title: string;
-  description?: string;  // Optional
-  count?: number;
+	title: string;
+	description?: string; // Optional
+	count?: number;
 }
 
 const { title, description, count = 0 } = Astro.props;
@@ -54,13 +54,14 @@ Accept children content:
 ```astro
 ---
 interface Props {
-  heading: string;
+	heading: string;
 }
 ---
 
 <div class="card bg-white shadow-md rounded-lg p-6 border border-gray-200">
-  <h3 class="text-lg font-semibold text-gray-900">{heading}</h3>
-  <slot />  {/* Child content goes here */}
+	<h3 class="text-lg font-semibold text-gray-900">{heading}</h3>
+	<slot />
+	{/* Child content goes here */}
 </div>
 ```
 
@@ -70,9 +71,9 @@ CSS is automatically scoped to the component:
 
 ```astro
 <style>
-  h3 {
-    color: red;  /* Only affects h3 in this component */
-  }
+	h3 {
+		color: red; /* Only affects h3 in this component */
+	}
 </style>
 ```
 
@@ -82,11 +83,13 @@ Use Tailwind utility classes for styling (preferred approach):
 
 ```astro
 <div class="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
-  <h2 class="text-2xl font-bold text-slate-900">Title</h2>
-  <p class="text-slate-600">Description</p>
-  <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-    Click me
-  </button>
+	<h2 class="text-2xl font-bold text-slate-900">Title</h2>
+	<p class="text-slate-600">Description</p>
+	<button
+		class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+	>
+		Click me
+	</button>
 </div>
 ```
 
@@ -95,6 +98,48 @@ Use Tailwind utility classes for styling (preferred approach):
 - No CSS file management needed
 - Responsive design with breakpoint prefixes (`md:`, `lg:`, etc.)
 - State variants (`hover:`, `focus:`, `active:`)
+
+## Code Quality
+
+### Linting
+
+All Astro components are checked by ESLint with these rules:
+
+- TypeScript strict mode enabled
+- React hooks rules (for embedded React components)
+- Accessibility checks (eslint-plugin-jsx-a11y)
+- Import ordering and organization
+
+**Run linters**:
+
+```bash
+pnpm lint:eslint         # Check for issues
+pnpm lint:eslint:fix     # Auto-fix issues
+```
+
+### Formatting
+
+Prettier automatically formats Astro files with:
+
+- Consistent indentation (tabs)
+- Single quotes for strings
+- Semicolons enabled
+- 80-character line width
+
+**Format files**:
+
+```bash
+pnpm format              # Format all files
+pnpm format:check        # Check formatting
+```
+
+### Best Practices
+
+- **Props**: Always define TypeScript interfaces
+- **Imports**: Group by type (external, internal, components)
+- **Accessibility**: Use semantic HTML and ARIA attributes
+- **Performance**: Minimize client-side JavaScript
+- **Styling**: Prefer Tailwind classes over scoped CSS
 - Consistent design tokens
 - Smaller final CSS bundle
 
@@ -106,9 +151,9 @@ Use `<script>` tags for client-side JavaScript:
 <div id="interactive">Click me</div>
 
 <script>
-  document.querySelector('#interactive')?.addEventListener('click', () => {
-    console.log('Clicked!');
-  });
+	document.querySelector('#interactive')?.addEventListener('click', () => {
+		console.log('Clicked!');
+	});
 </script>
 ```
 
@@ -134,16 +179,14 @@ Use `<script>` tags for client-side JavaScript:
 ### Loops
 
 ```astro
-{items.map((item) => (
-  <li key={item.id}>{item.name}</li>
-))}
+{items.map((item) => <li key={item.id}>{item.name}</li>)}
 ```
 
 ### Importing Components
 
 ```astro
-import Button from '../components/Button.astro';
-import ReactCounter from '../components/ReactCounter.tsx';
+import Button from '../components/Button.astro'; import ReactCounter from
+'../components/ReactCounter.tsx';
 
 <Button />
 <ReactCounter client:load />
@@ -154,8 +197,8 @@ import ReactCounter from '../components/ReactCounter.tsx';
 ```astro
 ---
 interface Props {
-  size?: 'sm' | 'md' | 'lg';
-  variant?: 'primary' | 'secondary';
+	size?: 'sm' | 'md' | 'lg';
+	variant?: 'primary' | 'secondary';
 }
 
 const { size = 'md', variant = 'primary' } = Astro.props;

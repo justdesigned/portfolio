@@ -1,0 +1,16 @@
+dist
+.astro
+node_modules
+pnpm-lock.yaml
+package-lock.json
+*.min.js
+*.min.css
+
+# Build outputs
+build/
+public/
+
+# Cache
+.cache/
+.eslintcache
+.stylelintcache
