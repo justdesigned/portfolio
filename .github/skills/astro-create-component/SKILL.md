@@ -44,16 +44,10 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div class="component">
-  <h2>{title}</h2>
-  {description && <p>{description}</p>}
+<div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+  <h2 class="text-2xl font-bold text-slate-900">{title}</h2>
+  {description && <p class="text-slate-600 mt-2">{description}</p>}
 </div>
-
-<style>
-  .component {
-    /* Component styles */
-  }
-</style>
 ```
 
 ## Template: React Component
@@ -69,9 +63,9 @@ export default function ComponentName({
 	description,
 }: Props): JSX.Element {
 	return (
-		<div className='component'>
-			<h2>{title}</h2>
-			{description && <p>{description}</p>}
+		<div className='p-6 bg-white rounded-lg shadow-md border border-gray-200'>
+			<h2 className='text-2xl font-bold text-slate-900'>{title}</h2>
+			{description && <p className='text-slate-600 mt-2'>{description}</p>}
 		</div>
 	);
 }
@@ -84,6 +78,15 @@ When creating components:
 1. Choose the appropriate type (Astro or React)
 2. Use TypeScript for type safety
 3. Define Props interface clearly
-4. Add comments for complex logic
-5. Place in appropriate `src/components/` subdirectory
-6. Create separate `.types.ts` if Props/exports become complex
+4. Use Tailwind CSS utility classes for styling
+5. Add comments for complex logic
+6. Place in appropriate `src/components/` subdirectory
+7. Create separate `.types.ts` if Props/exports become complex
+
+## Tailwind Best Practices for Components
+
+- Use consistent spacing: `p-4`, `p-6`, `gap-4`
+- Use semantic colors: `text-slate-900`, `bg-white`, `border-gray-200`
+- Leverage responsive prefixes: `md:flex-row`, `lg:text-lg`
+- Use state variants: `hover:`, `focus:`, `active:` for interactivity
+- Avoid hardcoding pixel values when Tailwind has utilities

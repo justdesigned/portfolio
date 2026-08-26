@@ -54,9 +54,10 @@ Serves the production build locally for testing.
 
 1. **Start server**: `astro dev --background`
 2. **Make changes** to `.astro`, `.tsx`, or config files
-3. **Auto-reload** happens in browser
-4. **View logs** if issues: `astro dev logs`
-5. **Stop when done**: `astro dev stop`
+3. **Add Tailwind classes** directly in templates - changes reflect instantly
+4. **Auto-reload** happens in browser with HMR (Hot Module Replacement)
+5. **View logs** if issues: `astro dev logs`
+6. **Stop when done**: `astro dev stop`
 
 ## Common Commands
 
@@ -86,3 +87,18 @@ astro dev logs             # View recent logs
 - Check logs only when needed
 - Always build and preview before deployment
 - Monitor server logs for performance issues
+
+## Working with Tailwind
+
+The project uses **Tailwind CSS 4+ with @tailwindcss/vite** for styling:
+
+- Tailwind classes are automatically compiled and included in the dev server
+- Changes to HTML templates with Tailwind classes reflect instantly (HMR)
+- The complete Tailwind CSS is built once and cached
+- No additional build step needed for Tailwind - it's integrated via Vite
+
+**Development Tips**:
+
+- Use browser DevTools to inspect generated Tailwind classes
+- Tailwind IntelliSense extension helps with autocomplete
+- Purging unused styles happens automatically in production builds

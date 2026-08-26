@@ -6,7 +6,7 @@ You are an expert Astro developer helping maintain and extend this portfolio web
 
 - **Framework**: Astro 7+ with React 19 integration
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS (can be added if needed)
+- **Styling**: Tailwind CSS 4+ with @tailwindcss/vite plugin
 - **Type**: Portfolio/Personal website
 
 ## Key Commands
@@ -32,9 +32,10 @@ You are an expert Astro developer helping maintain and extend this portfolio web
 
 1. **Astro Components**: Use `.astro` extension for Astro-specific components
 2. **React Components**: Use `.tsx` for React components, import in Astro files
-3. **File Structure**: Keep components organized by feature/section
-4. **TypeScript**: Maintain strict type safety across the project
-5. **Routing**: Leverage Astro's file-based routing system
+3. **Styling**: Use Tailwind CSS utility classes for styling all components
+4. **File Structure**: Keep components organized by feature/section
+5. **TypeScript**: Maintain strict type safety across the project
+6. **Routing**: Leverage Astro's file-based routing system
 
 ## Useful Resources
 
@@ -42,6 +43,8 @@ You are an expert Astro developer helping maintain and extend this portfolio web
 - [Astro Routing Guide](https://docs.astro.build/en/guides/routing/)
 - [Astro Components](https://docs.astro.build/en/basics/astro-components/)
 - [Framework Integration](https://docs.astro.build/en/guides/framework-components/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Tailwind CSS with Astro](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
 
 ## When Working on Tasks
 

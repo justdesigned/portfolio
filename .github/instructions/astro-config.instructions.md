@@ -10,19 +10,23 @@ description: 'Configuring Astro settings, integrations, and build options. Guida
 The `astro.config.mjs` file configures your Astro project:
 
 ```js
+import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 
 export default defineConfig({
 	integrations: [react()],
 	vite: {
-		// Vite config
+		plugins: [tailwindcss()],
 	},
-	build: {
-		// Build options
-	},
-	// More options...
 });
 ```
+
+**Note**: This project is already configured with:
+
+- ✅ React integration enabled
+- ✅ Tailwind CSS 4+ via @tailwindcss/vite plugin
+- ✅ TypeScript support
 
 ## Common Configuration Options
 
@@ -32,12 +36,13 @@ Add framework support (React, Vue, Svelte, etc.):
 
 ```js
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-	integrations: [react(), tailwind()],
+	integrations: [react()],
 });
 ```
+
+**Note**: Tailwind CSS is configured via Vite plugin, not as an Astro integration in this project.
 
 ### Build Settings
 
@@ -82,19 +87,49 @@ export default defineConfig({
 This project has:
 
 - ✅ React integration enabled
-- 📦 TypeScript support
-- 🎨 Ready for Tailwind (add if needed)
+- ✅ Tailwind CSS 4+ installed and configured
+- ✅ TypeScript support
+- ✅ Vite with @tailwindcss/vite plugin
+
+## Tailwind CSS Setup
+
+Tailwind CSS 4+ is already configured in this project using the `@tailwindcss/vite` plugin:
+
+```js
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+	vite: {
+		plugins: [tailwindcss()],
+	},
+});
+```
+
+Use Tailwind utility classes directly in your components:
+
+```astro
+<div class="p-6 bg-white rounded-lg shadow-md">
+  <h1 class="text-2xl font-bold text-slate-900">Hello</h1>
+</div>
+```
+
+### Tailwind Features
+
+- **Utility-first**: Build designs with predefined utility classes
+- **Responsive**: Mobile-first responsive design with breakpoints
+- **Dark mode**: Built-in dark mode support
+- **Customization**: Customize colors, spacing, and more in `tailwind.config.ts` (if created)
 
 ## Adding Integrations
 
-To add Astro integrations:
+To add Astro integrations (not Tailwind - it's already set up):
 
 ```bash
 # Install integration
-pnpm add @astrojs/tailwind
+pnpm add @astrojs/vue
 
 # Update config
-# Add to integrations array
+# Add to integrations array in astro.config.mjs
 ```
 
 ## Environment Variables

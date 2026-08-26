@@ -9,24 +9,38 @@ description: 'Working with React component files in Astro. Patterns for interact
 
 React components in Astro projects are standard TypeScript React files:
 
-```tsx
+````tsx
 interface Props {
-	title: string;
-	onAction?: () => void;
+  title: string;
+  onAction?: () => void;
 }
 
-export default function MyComponent({ title, onAction }: Props): JSX.Element {
-	const [count, setCount] = useState(0);
+export default function MyComponent({
+  title,
+  onAction,
+}: Props): JSX.Element {
+  const [count, setCount] = useState(0);
 
-	return (
-		<div className='component'>
-			<h2>{title}</h2>
-			<button onClick={() => setCount(count + 1)}>Count: {count}</button>
-			{onAction && <button onClick={onAction}>Action</button>}
-		</div>
-	);
+  return (
+    <div className="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
+      <button
+        onClick={() => setCount(count + 1)}
+        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+      >
+        Count: {count}
+      </button>
+      {onAction && (
+        <button
+          onClick={onAction}
+          className="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-gray-300"
+        >
+          Action
+        </button>
+      )}
+    </div>
+  );
 }
-```
 
 ## Using in Astro
 
@@ -43,7 +57,7 @@ import MyComponent from '../components/MyComponent.tsx';
     client:load
   />
 </Layout>
-```
+````
 
 ## Client Directives
 
@@ -112,14 +126,19 @@ export default function ContactForm(): JSX.Element {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className='space-y-4'>
 			<input
 				type='email'
 				value={email}
 				onChange={(e) => setEmail(e.target.value)}
 				placeholder='Email'
+				className='w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500'
 			/>
-			<button type='submit'>Submit</button>
+			<button
+				type='submit'
+				className='w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition'>
+				Submit
+			</button>
 		</form>
 	);
 }
@@ -143,8 +162,12 @@ export default function DataComponent(): JSX.Element {
 			});
 	}, []);
 
-	if (loading) return <p>Loading...</p>;
-	return <div>{JSON.stringify(data)}</div>;
+	if (loading) return <p className='text-slate-600'>Loading...</p>;
+	return (
+		<div className='p-4 bg-white rounded border border-gray-200'>
+			{JSON.stringify(data)}
+		</div>
+	);
 }
 ```
 
@@ -164,9 +187,10 @@ export default function Button({ label, onClick }: Props): JSX.Element {
 
 ## Best Practices
 
-1. **Always type Props**: Use TypeScript interfaces
-2. **Keep components focused**: Single responsibility
-3. **Use React hooks**: For state and side effects
-4. **Minimize hydration**: Only use `client:` when needed
-5. **Handle loading/error states**: For better UX
-6. **Use event handlers**: Prefer `onClick`, `onChange`, etc.
+1. **Use Tailwind CSS**: Prefer `className` with Tailwind utilities over inline styles or CSS modules
+2. **Always type Props**: Use TypeScript interfaces
+3. **Keep components focused**: Single responsibility
+4. **Use React hooks**: For state and side effects
+5. **Minimize hydration**: Only use `client:` when needed
+6. **Handle loading/error states**: For better UX
+7. **Responsive design**: Use Tailwind breakpoints (`md:`, `lg:`) in className strings

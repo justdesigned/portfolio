@@ -22,18 +22,11 @@ const { title } = Astro.props;
 const computedValue = Math.random();
 ---
 
-<!-- HTML template -->
-<div>
-  <h1>{title}</h1>
-  <p>Random: {computedValue}</p>
+<!-- HTML template with Tailwind classes -->
+<div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+  <h1 class="text-2xl font-bold text-slate-900">{title}</h1>
+  <p class="text-slate-600">{computedValue}</p>
 </div>
-
-<style>
-  /* Component-scoped CSS */
-  div {
-    padding: 1rem;
-  }
-</style>
 ```
 
 ## Key Features
@@ -65,8 +58,8 @@ interface Props {
 }
 ---
 
-<div class="card">
-  <h3>{heading}</h3>
+<div class="card bg-white shadow-md rounded-lg p-6 border border-gray-200">
+  <h3 class="text-lg font-semibold text-gray-900">{heading}</h3>
   <slot />  {/* Child content goes here */}
 </div>
 ```
@@ -82,6 +75,28 @@ CSS is automatically scoped to the component:
   }
 </style>
 ```
+
+### Tailwind CSS
+
+Use Tailwind utility classes for styling (preferred approach):
+
+```astro
+<div class="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-slate-900">Title</h2>
+  <p class="text-slate-600">Description</p>
+  <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+    Click me
+  </button>
+</div>
+```
+
+**Benefits**:
+
+- No CSS file management needed
+- Responsive design with breakpoint prefixes (`md:`, `lg:`, etc.)
+- State variants (`hover:`, `focus:`, `active:`)
+- Consistent design tokens
+- Smaller final CSS bundle
 
 ### Client-Side Scripts
 
@@ -99,12 +114,13 @@ Use `<script>` tags for client-side JavaScript:
 
 ## Best Practices
 
-1. **Keep pure components**: Focus on structure and presentation
-2. **Use props for configuration**: Make components reusable
-3. **Leverage scoped CSS**: Avoid global namespace pollution
+1. **Prefer Tailwind CSS**: Use utility classes for styling over `<style>` blocks
+2. **Keep pure components**: Focus on structure and presentation
+3. **Use props for configuration**: Make components reusable
 4. **Minimize client scripts**: Let Astro handle most rendering
 5. **Use layouts**: Wrap pages with consistent templates
 6. **Type everything**: Use TypeScript interfaces for Props
+7. **Responsive design**: Use Tailwind breakpoints (`md:`, `lg:`) for responsive layouts
 
 ## Common Patterns
 
