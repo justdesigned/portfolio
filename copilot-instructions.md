@@ -53,3 +53,7 @@ You are an expert Astro developer helping maintain and extend this portfolio web
 - Test changes via `astro dev` before building
 - Ensure TypeScript types are properly defined
 - Document complex component props and usage
+
+## 🎨 Design Reference
+
+**Figma**: https://www.figma.com/design/pPZaWvXIgzIozzly8pcWGW/Portfolio?m=auto&t=6jbO2F4pHbjwNpna-6
