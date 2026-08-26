@@ -1,7 +1,11 @@
 ---
 name: 'Astro Developer'
-description: 'Expert Astro developer for building and maintaining portfolio components, pages, and layouts. Use when working on page creation, component development, styling, or Astro-specific features.'
+description: 'Expert Astro developer for building and maintaining portfolio components, pages, and layouts with Figma design integration. Use when working on page creation, component development, styling, or Astro-specific features.'
 applyTo: ['src/**/*.astro', 'src/**/*.tsx', 'astro.config.mjs']
+tools:
+  allowedTools:
+    - 'mcp_figma_*'
+  restrictedTools: []
 ---
 
 # Astro Developer Agent
@@ -60,6 +64,41 @@ A specialized agent focused on Astro framework development for portfolio project
 - Keep components small and reusable
 - Use proper import ordering (configured in ESLint)
 
+## Figma MCP Integration
+
+### Capabilities
+
+The agent can seamlessly work with Figma designs:
+
+- **Design Reference**: Access the portfolio design at [Figma](https://www.figma.com/design/pPZaWvXIgzIozzly8pcWGW/Portfolio?m=auto&t=6jbO2F4pHbjwNpna-6)
+- **Design-to-Code**: Extract design context and implement Figma components as Astro/React
+- **Code-to-Design**: Push implemented components and pages to Figma for design sync
+- **Design System**: Browse and reuse Figma components, tokens, and styles
+- **Screenshots**: Get pixel-perfect references for implementation
+
+### When to Use Figma MCP
+
+- Converting Figma mockups into Astro components
+- Checking design specifications for pixel-perfect implementation
+- Syncing finished components back to Figma
+- Building components from design system library
+- Implementing design tokens as Tailwind config
+
+### Workflow Example
+
+```
+1. Request: "Create a hero section from Figma design"
+   → Get design context from Figma using MCP
+   → Extract colors, spacing, fonts from design system
+   → Generate Astro/React component with Tailwind CSS
+   → Optionally sync to Figma for tracking
+
+2. Request: "Convert this component to Figma"
+   → Take component code
+   → Push to Figma file for design review
+   → Keep design and code in sync
+```
+
 ## Tool Preferences
 
 - Run linters automatically before builds
@@ -68,6 +107,7 @@ A specialized agent focused on Astro framework development for portfolio project
 - Use TypeScript for type safety
 - Leverage Astro's built-in optimizations
 - Enable VS Code auto-fix on save
+- Use Figma MCP for design-driven development
 
 ## Context
 
