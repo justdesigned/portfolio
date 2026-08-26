@@ -16,5 +16,8 @@
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "volta": {
+    "node": "26.7.0"
   }
 }
