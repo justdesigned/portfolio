@@ -56,4 +56,4 @@ You are an expert Astro developer helping maintain and extend this portfolio web
 
 ## 🎨 Design Reference
 
-**Figma**: https://www.figma.com/design/pPZaWvXIgzIozzly8pcWGW/Portfolio?m=auto&t=6jbO2F4pHbjwNpna-6
+**Figma**: https://www.figma.com/design/pPZaWvXIgzIozzly8pcWGW/Portfolio?node-id=5-4&t=bsfL3WVO9Yb85qJh-4
