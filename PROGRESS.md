@@ -78,6 +78,38 @@ None
 
 ---
 
+### Session 2 — 2026-08-30
+
+**Goal**: Complete Feature #9 - migrate reusable UI primitives into `src/components/ui/` and validate build integrity.
+
+**Completed**:
+
+1. ✅ Created `src/components/ui/` and moved `ProjectCard.astro`, `ServiceCard.astro`, `SkillCard.astro`, and `SectionHeader.astro` there.
+2. ✅ Updated all consuming imports in `ProjectsSection.astro`, `ServicesSection.astro`, `SkillsSection.astro`, and `AboutSection.astro`.
+3. ✅ Confirmed the componentized structure matches project conventions from `component-structure.instructions.md`.
+4. ✅ Verified `pnpm lint:eslint` and `pnpm lint:style` pass.
+5. ✅ Verified `pnpm build` passes successfully.
+
+**Verification Run**:
+
+- ESLint: ✅ Passed
+- Stylelint: ✅ Passed
+- Astro build: ✅ Passed
+- `pnpm lint:fix`: ⚠️ still fails due a pre-existing markdown formatting issue in `.github/instructions/*.md` files, not due to component code.
+
+**Evidence Captured**:
+
+- UI components now live under `src/components/ui/`
+- Application builds without runtime errors
+- Import paths updated without breaking page composition
+
+**Best Next Action**:
+
+1. Proceed to Feature #10 (section migration) or
+2. Begin Feature #11 (image optimization) if the design migration is the next priority
+
+---
+
 ## Instructions Update Log
 
 ### 2026-08-30 — Harness Engineering Optimization

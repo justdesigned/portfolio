@@ -173,7 +173,7 @@
       "area": "refactoring",
       "title": "Migrate UI Components to ui/ Folder",
       "user_visible_behavior": "No user-visible changes - internal code organization improvement",
-      "status": "not_started",
+      "status": "passing",
       "verification": [
         "Move ProjectCard.astro to src/components/ui/ProjectCard.astro",
         "Move ServiceCard.astro to src/components/ui/ServiceCard.astro",
@@ -184,7 +184,22 @@
         "Run pnpm build to verify successful build",
         "Test homepage renders correctly"
       ],
-      "evidence": {},
+      "evidence": {
+        "moved_components": [
+          "src/components/ui/ProjectCard.astro",
+          "src/components/ui/ServiceCard.astro",
+          "src/components/ui/SkillCard.astro",
+          "src/components/ui/SectionHeader.astro"
+        ],
+        "updated_imports": [
+          "src/components/ProjectsSection.astro",
+          "src/components/ServicesSection.astro",
+          "src/components/SkillsSection.astro",
+          "src/components/AboutSection.astro"
+        ],
+        "verification_command": "pnpm lint:eslint && pnpm lint:style && pnpm build",
+        "result": "passed"
+      },
       "notes": "Per component-structure.instructions.md, reusable UI primitives should live in ui/ folder. This is a refactoring task with no functional changes."
     },
     {

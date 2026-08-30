@@ -1,0 +1,32 @@
+---
+interface Props {
+	number: string;
+	title: string;
+	description: string;
+	icon: string;
+}
+
+const { number, title, description, icon } = Astro.props;
+---
+
+<article
+	class="rounded-2xl border border-white/5 bg-[#141417] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]"
+>
+	<div class="mb-8 flex items-center justify-between gap-3">
+		<span
+			class="font-mono-code text-sm font-semibold uppercase tracking-[0.12em] text-cyan-300"
+		>
+			{number}
+		</span>
+		<img src={icon} alt="" class="h-5 w-5" />
+	</div>
+
+	<div class="space-y-3">
+		<h3
+			class="font-display text-[1.35rem] font-semibold tracking-[-0.04em] text-zinc-50"
+		>
+			{title}
+		</h3>
+		<p class="text-[0.95rem] leading-7 text-zinc-400">{description}</p>
+	</div>
+</article>
