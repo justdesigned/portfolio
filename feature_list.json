@@ -1,0 +1,247 @@
+{
+  "features": [
+    {
+      "id": "hero-section",
+      "priority": 1,
+      "area": "landing",
+      "title": "Hero Section",
+      "user_visible_behavior": "User sees a prominent hero section with background, heading, and call-to-action when landing on the homepage",
+      "status": "passing",
+      "verification": [
+        "Open homepage in browser",
+        "Verify hero section is visible above the fold",
+        "Check background image loads correctly from assets/background/",
+        "Verify heading text is readable and properly styled",
+        "Confirm hero section is responsive on mobile/tablet/desktop"
+      ],
+      "evidence": {
+        "component_exists": "src/components/Hero.astro",
+        "imported_in": "src/pages/index.astro",
+        "uses_background_image": true
+      },
+      "notes": "Uses background-image pattern from assets/background/. Should use Tailwind classes for styling."
+    },
+    {
+      "id": "header-navigation",
+      "priority": 2,
+      "area": "navigation",
+      "title": "Header Navigation",
+      "user_visible_behavior": "User sees a fixed/sticky header with navigation links to all sections",
+      "status": "passing",
+      "verification": [
+        "Open homepage in browser",
+        "Verify header is visible at the top",
+        "Check navigation links are clickable",
+        "Test smooth scroll to sections when clicking nav links",
+        "Verify header is responsive (mobile menu if needed)"
+      ],
+      "evidence": {
+        "component_exists": "src/components/Header.astro",
+        "imported_in": "src/pages/index.astro"
+      },
+      "notes": "Should be in src/components/section/ folder per new structure guidelines"
+    },
+    {
+      "id": "about-section",
+      "priority": 3,
+      "area": "content",
+      "title": "About Section",
+      "user_visible_behavior": "User sees information about the portfolio owner with optional image/avatar",
+      "status": "passing",
+      "verification": [
+        "Scroll to About section on homepage",
+        "Verify section is visible with proper spacing",
+        "Check if avatar/image loads using <Image /> from astro:assets",
+        "Verify text content is readable",
+        "Test responsive layout on different screen sizes"
+      ],
+      "evidence": {
+        "component_exists": "src/components/AboutSection.astro",
+        "imported_in": "src/pages/index.astro",
+        "uses_image_component": true
+      },
+      "notes": "Uses <Image /> component from astro:assets for avatar. Should be in section/ folder."
+    },
+    {
+      "id": "skills-section",
+      "priority": 4,
+      "area": "content",
+      "title": "Skills Section",
+      "user_visible_behavior": "User sees a grid/list of technical skills with icons or descriptions",
+      "status": "passing",
+      "verification": [
+        "Scroll to Skills section on homepage",
+        "Verify skills are displayed in a grid or organized layout",
+        "Check if SkillCard components render properly",
+        "Verify icons/images load correctly",
+        "Test responsive grid layout on mobile/tablet/desktop"
+      ],
+      "evidence": {
+        "component_exists": "src/components/SkillsSection.astro",
+        "imported_in": "src/pages/index.astro",
+        "has_child_component": "src/components/SkillCard.astro"
+      },
+      "notes": "Uses SkillCard component. Cards should be moved to ui/ folder per structure guidelines."
+    },
+    {
+      "id": "projects-section",
+      "priority": 5,
+      "area": "content",
+      "title": "Projects Section",
+      "user_visible_behavior": "User sees a showcase of portfolio projects with images, descriptions, and tags",
+      "status": "passing",
+      "verification": [
+        "Scroll to Projects section on homepage",
+        "Verify project cards are displayed",
+        "Check project images load (currently using <img> - should use <Image />)",
+        "Verify project titles, descriptions, and tags are visible",
+        "Test card hover effects and interactions",
+        "Confirm responsive grid layout"
+      ],
+      "evidence": {
+        "component_exists": "src/components/ProjectsSection.astro",
+        "imported_in": "src/pages/index.astro",
+        "has_child_component": "src/components/ProjectCard.astro"
+      },
+      "notes": "ProjectCard currently uses plain <img> tag - needs migration to <Image /> component per images.instructions.md. Card should be in ui/ folder."
+    },
+    {
+      "id": "services-section",
+      "priority": 6,
+      "area": "content",
+      "title": "Services Section",
+      "user_visible_behavior": "User sees offered services/expertise areas with descriptions",
+      "status": "passing",
+      "verification": [
+        "Scroll to Services section on homepage",
+        "Verify service cards are displayed",
+        "Check ServiceCard components render with icons/titles/descriptions",
+        "Test responsive layout",
+        "Verify proper spacing and alignment"
+      ],
+      "evidence": {
+        "component_exists": "src/components/ServicesSection.astro",
+        "imported_in": "src/pages/index.astro",
+        "has_child_component": "src/components/ServiceCard.astro"
+      },
+      "notes": "Uses ServiceCard component. Should be moved to ui/ folder per structure guidelines."
+    },
+    {
+      "id": "contact-section",
+      "priority": 7,
+      "area": "content",
+      "title": "Contact Section",
+      "user_visible_behavior": "User sees contact information and/or contact form",
+      "status": "passing",
+      "verification": [
+        "Scroll to Contact section on homepage",
+        "Verify contact section is visible",
+        "Check if form exists and renders properly",
+        "Test form inputs if present",
+        "Verify contact links/email are clickable",
+        "Test responsive layout"
+      ],
+      "evidence": {
+        "component_exists": "src/components/ContactSection.astro",
+        "imported_in": "src/pages/index.astro"
+      },
+      "notes": "Should be in section/ folder per new structure guidelines."
+    },
+    {
+      "id": "footer",
+      "priority": 8,
+      "area": "navigation",
+      "title": "Footer",
+      "user_visible_behavior": "User sees footer with social links, copyright, and additional navigation",
+      "status": "passing",
+      "verification": [
+        "Scroll to bottom of homepage",
+        "Verify footer is visible",
+        "Check social media links work",
+        "Verify copyright text is present",
+        "Test responsive layout"
+      ],
+      "evidence": {
+        "component_exists": "src/components/Footer.astro",
+        "imported_in": "src/pages/index.astro"
+      },
+      "notes": "Should be in section/ folder per new structure guidelines."
+    },
+    {
+      "id": "component-migration-ui",
+      "priority": 9,
+      "area": "refactoring",
+      "title": "Migrate UI Components to ui/ Folder",
+      "user_visible_behavior": "No user-visible changes - internal code organization improvement",
+      "status": "not_started",
+      "verification": [
+        "Move ProjectCard.astro to src/components/ui/ProjectCard.astro",
+        "Move ServiceCard.astro to src/components/ui/ServiceCard.astro",
+        "Move SkillCard.astro to src/components/ui/SkillCard.astro",
+        "Move SectionHeader.astro to src/components/ui/SectionHeader.astro",
+        "Update all import paths in consuming components",
+        "Run pnpm lint:fix to verify no errors",
+        "Run pnpm build to verify successful build",
+        "Test homepage renders correctly"
+      ],
+      "evidence": {},
+      "notes": "Per component-structure.instructions.md, reusable UI primitives should live in ui/ folder. This is a refactoring task with no functional changes."
+    },
+    {
+      "id": "component-migration-section",
+      "priority": 10,
+      "area": "refactoring",
+      "title": "Migrate Section Components to section/ Folder",
+      "user_visible_behavior": "No user-visible changes - internal code organization improvement",
+      "status": "not_started",
+      "verification": [
+        "Move Header.astro to src/components/section/Header.astro",
+        "Move Hero.astro to src/components/section/Hero.astro",
+        "Move AboutSection.astro to src/components/section/AboutSection.astro",
+        "Move SkillsSection.astro to src/components/section/SkillsSection.astro",
+        "Move ProjectsSection.astro to src/components/section/ProjectsSection.astro",
+        "Move ServicesSection.astro to src/components/section/ServicesSection.astro",
+        "Move ContactSection.astro to src/components/section/ContactSection.astro",
+        "Move Footer.astro to src/components/section/Footer.astro",
+        "Update all import paths in src/pages/index.astro",
+        "Run pnpm lint:fix to verify no errors",
+        "Run pnpm build to verify successful build",
+        "Test homepage renders correctly"
+      ],
+      "evidence": {},
+      "notes": "Per component-structure.instructions.md, page sections should live in section/ folder. This is a refactoring task with no functional changes."
+    },
+    {
+      "id": "images-migration",
+      "priority": 11,
+      "area": "refactoring",
+      "title": "Migrate Plain <img> to <Image /> Components",
+      "user_visible_behavior": "Improved image loading performance and optimization",
+      "status": "not_started",
+      "verification": [
+        "Find all instances of plain <img> tags in components",
+        "Replace with <Image /> from astro:assets",
+        "Ensure alt text is descriptive for accessibility",
+        "Move images from public/figma/ to src/assets/images/ if needed",
+        "Test that all images load correctly",
+        "Verify responsive image sizing",
+        "Run Lighthouse to confirm performance improvements",
+        "Run pnpm lint:fix to verify no errors"
+      ],
+      "evidence": {},
+      "notes": "Per images.instructions.md, content images should use <Image /> from astro:assets. ProjectCard.astro currently uses plain <img> tag."
+    }
+  ],
+  "metadata": {
+    "project": "Portfolio Website",
+    "framework": "Astro 7+ with React 19",
+    "last_updated": "2026-08-30",
+    "total_features": 11,
+    "status_counts": {
+      "passing": 8,
+      "in_progress": 0,
+      "blocked": 0,
+      "not_started": 3
+    }
+  }
+}

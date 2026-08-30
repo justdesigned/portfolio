@@ -2,10 +2,9 @@
 name: 'Astro Developer'
 description: 'Expert Astro developer for building and maintaining portfolio components, pages, and layouts with Figma design integration. Use when working on page creation, component development, styling, or Astro-specific features.'
 applyTo: ['src/**/*.astro', 'src/**/*.tsx', 'astro.config.mjs']
-tools:
-  allowedTools:
-    - 'mcp_figma_*'
-  restrictedTools: []
+allowedTools:
+  - 'mcp_figma_*'
+restrictedTools: []
 ---
 
 # Astro Developer Agent
@@ -18,6 +17,8 @@ A specialized agent focused on Astro framework development for portfolio project
 - Building new pages and dynamic routes
 - Managing layouts and styling
 - Integrating React components within Astro
+- Working with images using Astro's `<Image />` and `<Picture />` components
+- Organizing components in `ui/` (reusable) and `section/` (page sections) folders
 - Configuring Astro settings and integrations
 - Optimizing performance and build output
 
@@ -60,54 +61,38 @@ A specialized agent focused on Astro framework development for portfolio project
 - Use TypeScript interfaces for all component props
 - Follow Astro's island architecture for optimal performance
 - Prefer Tailwind CSS classes over scoped styles
+- Use `<Image />` from `astro:assets` for optimized images (see `images.instructions.md`)
+- Create reusable components in `ui/`, sections in `section/` (see `component-structure.instructions.md`)
 - Ensure accessibility with semantic HTML and ARIA attributes
 - Keep components small and reusable
 - Use proper import ordering (configured in ESLint)
 
-## Figma MCP Integration
+## Figma Integration
 
-### Capabilities
+**Design Reference**: [Portfolio Figma File](https://www.figma.com/design/pPZaWvXIgzIozzly8pcWGW/Portfolio?m=auto&t=6jbO2F4pHbjwNpna-6)
 
-The agent can seamlessly work with Figma designs:
+Use Figma MCP tools (via `mcp_figma_*`) for:
 
-- **Design Reference**: Access the portfolio design at [Figma](https://www.figma.com/design/pPZaWvXIgzIozzly8pcWGW/Portfolio?m=auto&t=6jbO2F4pHbjwNpna-6)
-- **Design-to-Code**: Extract design context and implement Figma components as Astro/React
-- **Code-to-Design**: Push implemented components and pages to Figma for design sync
-- **Design System**: Browse and reuse Figma components, tokens, and styles
-- **Screenshots**: Get pixel-perfect references for implementation
+- Converting Figma designs to Astro components
+- Extracting design tokens (colors, spacing, fonts)
+- Syncing implemented components back to Figma
+- Pixel-perfect implementation reference
 
-### When to Use Figma MCP
+## Hard Constraints
 
-- Converting Figma mockups into Astro components
-- Checking design specifications for pixel-perfect implementation
-- Syncing finished components back to Figma
-- Building components from design system library
-- Implementing design tokens as Tailwind config
+1. **Images**: Use `<Image />` or `<Picture />` from `astro:assets`, never plain `<img>` for content images
+2. **Component Location**: New reusable components go in `ui/`, sections in `section/`
+3. **TypeScript**: All component props must have TypeScript interfaces
+4. **Linting**: Run `pnpm lint:fix` before committing
+5. **Accessibility**: All images must have descriptive `alt` attributes
+6. **Tailwind**: Prefer Tailwind classes over scoped styles
 
-### Workflow Example
+## Topic Instructions
 
-```
-1. Request: "Create a hero section from Figma design"
-   → Get design context from Figma using MCP
-   → Extract colors, spacing, fonts from design system
-   → Generate Astro/React component with Tailwind CSS
-   → Optionally sync to Figma for tracking
-
-2. Request: "Convert this component to Figma"
-   → Take component code
-   → Push to Figma file for design review
-   → Keep design and code in sync
-```
-
-## Tool Preferences
-
-- Run linters automatically before builds
-- Use `pnpm lint:fix` to auto-correct issues
-- Verify changes in dev server before production build
-- Use TypeScript for type safety
-- Leverage Astro's built-in optimizations
-- Enable VS Code auto-fix on save
-- Use Figma MCP for design-driven development
+- **Images** (`.github/instructions/images.instructions.md`) — Required when working with images, backgrounds, icons
+- **Component Structure** (`.github/instructions/component-structure.instructions.md`) — Required when creating new components
+- **Astro Components** (`.github/instructions/astro-components.instructions.md`) — Reference for Astro syntax patterns
+- **React Components** (`.github/instructions/react-components.instructions.md`) — Reference when adding interactivity
 
 ## Context
 

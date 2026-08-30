@@ -1,5 +1,85 @@
 # Portfolio Project Agents and Skills
 
+## Project Overview
+
+Astro 7+ portfolio website with React 19 integration, TypeScript, and Tailwind CSS 4+.
+
+## Quick Start
+
+- **Install**: `pnpm install`
+- **Dev**: `pnpm dev`
+- **Build**: `pnpm build`
+- **Lint**: `pnpm lint:fix`
+
+## Hard Constraints
+
+1. **Images**: Use `<Image />` or `<Picture />` from `astro:assets`, never plain `<img>` for content images
+2. **Component Organization**: New reusable components → `src/components/ui/`, sections → `src/components/section/`
+3. **TypeScript**: All component props must have TypeScript interfaces
+4. **Linting**: Run `pnpm lint:fix` before committing changes
+5. **Accessibility**: All images must have descriptive `alt` attributes
+6. **Tailwind**: Prefer Tailwind utility classes over scoped styles
+7. **Asset Structure**: Images → `assets/images/`, Icons → `assets/icons/`, Backgrounds → `assets/background/`
+
+## Topic Docs
+
+- **Images** (`.github/instructions/images.instructions.md`) — Required when working with images, backgrounds, icons
+- **Component Structure** (`.github/instructions/component-structure.instructions.md`) — Required when creating components
+- **Astro Components** (`.github/instructions/astro-components.instructions.md`) — Reference for Astro syntax
+- **React Components** (`.github/instructions/react-components.instructions.md`) — Reference when adding interactivity
+- **Astro Config** (`.github/instructions/astro-config.instructions.md`) — Reference for configuration changes
+
+## Feature Tracking
+
+This project uses `feature_list.json` to track functionality and verification status.
+
+### Working with Features
+
+1. **Check status**: Review `feature_list.json` before starting work
+2. **One feature at a time**: Only one feature should have `status: "in_progress"` at any time
+3. **Update status**: Change status from `not_started` → `in_progress` → `passing`
+4. **Verify work**: Follow verification steps for the feature
+5. **Record evidence**: Update `evidence` field with proof of completion
+
+### Status Values
+
+- `not_started` — Feature not yet implemented
+- `in_progress` — Currently being worked on (only one at a time)
+- `blocked` — Cannot proceed due to documented issue
+- `passing` — Verification passed and evidence recorded
+
+### Current State
+
+- **Passing**: 8 features (Hero, Header, About, Skills, Projects, Services, Contact, Footer)
+- **Not Started**: 3 features (component migrations, image optimization)
+
+**Next Priority**: Feature #9 (Migrate UI Components) or Feature #11 (Images Migration)
+
+## Session Continuity
+
+Use `PROGRESS.md` for multi-session tracking:
+
+### Before Each Session
+
+- Read `PROGRESS.md` → Current Verified State
+- Review `feature_list.json` → Choose next feature
+- Check for blockers or known risks
+
+### During Session
+
+- Update feature status to `in_progress`
+- Follow verification steps
+- Record evidence as you work
+
+### After Each Session
+
+- Update `PROGRESS.md` → Add session log entry
+- Update `feature_list.json` → Change status to `passing`
+- Run verification: `pnpm lint:fix && pnpm build`
+- Document any known risks for next session
+
+---
+
 ## Default Agent: Astro Developer
 
 The **Astro Developer** agent handles all Astro and portfolio-related tasks. It's automatically activated for:
@@ -65,7 +145,7 @@ pnpm preview              # Preview production build locally
 
 ## Project Structure
 
-```
+```text
 src/
 ├── pages/           # Routes (auto-generated from filenames)
 ├── components/      # Reusable components
@@ -112,7 +192,7 @@ src/
 
 ## Documentation
 
-Full Astro documentation: https://docs.astro.build
+Full Astro documentation: <https://docs.astro.build>
 
 ### Key Guides
 

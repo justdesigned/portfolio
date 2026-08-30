@@ -7,7 +7,7 @@ description: 'Working with Astro component files. Provides syntax highlighting, 
 
 ## File Structure
 
-Astro components use a triple-dash separator to divide frontmatter from template:
+Astro components use **triple-dash separator** (`---`) to divide frontmatter from template:
 
 ```astro
 ---
@@ -23,17 +23,15 @@ const computedValue = Math.random();
 ---
 
 <!-- HTML template with Tailwind classes -->
-<div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+<div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
 	<h1 class="text-2xl font-bold text-slate-900">{title}</h1>
 	<p class="text-slate-600">{computedValue}</p>
 </div>
 ```
 
-## Key Features
+## Props
 
-### Props
-
-Define component properties with TypeScript interfaces:
+Define component properties with **TypeScript interfaces**:
 
 ```astro
 ---
@@ -45,58 +43,127 @@ interface Props {
 
 const { title, description, count = 0 } = Astro.props;
 ---
+
+<div>
+	<h2>{title}</h2>
+	{description && <p>{description}</p>}
+	<span>Count: {count}</span>
+</div>
 ```
 
-### Slots
+## Slots
 
-Accept children content:
+Accept **children content** via `<slot />`:
 
 ```astro
 ---
 interface Props {
 	heading: string;
 }
+
+const { heading } = Astro.props;
 ---
 
-<div class="card bg-white shadow-md rounded-lg p-6 border border-gray-200">
+<div class="rounded-lg border border-gray-200 bg-white p-6 shadow-md">
 	<h3 class="text-lg font-semibold text-gray-900">{heading}</h3>
 	<slot />
-	{/* Child content goes here */}
+	<!-- Child content rendered here -->
 </div>
 ```
 
-### Tailwind CSS
+### Named Slots
 
-Use Tailwind utility classes for styling (preferred approach):
+Use named slots for **multiple content areas**:
 
 ```astro
-<div class="flex flex-col gap-4 p-6 bg-white rounded-lg shadow-md">
-	<h2 class="text-2xl font-bold text-slate-900">Title</h2>
-	<p class="text-slate-600">Description</p>
-	<button
-		class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-	>
-		Click me
-	</button>
+---
+// Card.astro
+---
+
+<div class="card">
+	<header>
+		<slot name="header" />
+	</header>
+	<main>
+		<slot />
+		<!-- Default slot -->
+	</main>
+	<footer>
+		<slot name="footer" />
+	</footer>
 </div>
 ```
 
-**Benefits**:
+Usage:
 
-- No CSS file management needed
-- Responsive design with breakpoint prefixes (`md:`, `lg:`, etc.)
-- State variants (`hover:`, `focus:`, `active:`)
+```astro
+---
+import Card from './Card.astro';
+---
 
-## Code Quality
+<Card>
+	<h2 slot="header">Title</h2>
+	<p>Main content</p>
+	<button slot="footer">Action</button>
+</Card>
+```
 
-### Linting
+## Conditional Rendering
 
-All Astro components are checked by ESLint with these rules:
+```astro
+---
+const { showBanner, items = [] } = Astro.props;
+---
 
-- TypeScript strict mode enabled
-- React hooks rules (for embedded React components)
-- Accessibility checks (eslint-plugin-jsx-a11y)
-- Import ordering and organization
+{showBanner && <div class="banner">Welcome!</div>}
+
+{
+	items.length > 0 ? (
+		<ul>
+			{items.map((item) => (
+				<li>{item}</li>
+			))}
+		</ul>
+	) : (
+		<p>No items found</p>
+	)
+}
+```
+
+## Astro.props Special Properties
+
+```astro
+---
+const { class: className, ...rest } = Astro.props;
+---
+
+<div class:list={['base-styles', className]} {...rest}>
+	<slot />
+</div>
+```
+
+## Class List Utility
+
+Dynamic classes with `class:list`:
+
+```astro
+---
+const { variant = 'primary', active = false } = Astro.props;
+---
+
+<button
+	class:list={[
+		'rounded px-4 py-2',
+		{
+			'bg-blue-500 text-white': variant === 'primary',
+			'bg-gray-200 text-gray-900': variant === 'secondary',
+		},
+		active && 'ring-2 ring-blue-400',
+	]}
+>
+	<slot />
+</button>
+```
 
 **Run linters**:
 
