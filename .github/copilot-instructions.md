@@ -57,3 +57,9 @@ You are an expert Astro developer helping maintain and extend this portfolio web
 ## 🎨 Design Reference
 
 **Figma**: https://www.figma.com/design/pPZaWvXIgzIozzly8pcWGW/Portfolio?node-id=5-4&t=bsfL3WVO9Yb85qJh-4
+
+## Additional Agent: Figma Designer
+
+The **Figma Designer** agent creates new portfolio mockups and updates existing Figma layouts while keeping the design consistent with the Astro implementation and the shared project reference file.
+
+**Location**: `.github/agents/figma-designer.agent.md`

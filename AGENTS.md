@@ -97,6 +97,12 @@ The **Content Copywriter** agent adapts personal resume material from `docs/CV.m
 
 **Location**: `.github/agents/content-copywriter.agent.md`
 
+## Additional Agent: Figma Designer
+
+The **Figma Designer** agent creates new mockups in Figma and updates existing portfolio layouts, keeping the design system aligned with the current Astro implementation and the project reference file.
+
+**Location**: `.github/agents/figma-designer.agent.md`
+
 ---
 
 ## Available Skills
