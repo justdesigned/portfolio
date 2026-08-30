@@ -1,7 +1,10 @@
 ---
+import GitHubIcon from '../../assets/icons/social-github.svg';
+import LinkedInIcon from '../../assets/icons/social-linkedin.svg';
+
 const socials = [
-  { label: 'GitHub', href: 'https://github.com', icon: '/figma/5edaa537-f690-4784-9a78-0983f719cc0e.svg' },
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: '/figma/ec78c76b-9d98-4bdc-8dd1-6bcbecfac283.svg' },
+  { label: 'GitHub', href: 'https://github.com', icon: GitHubIcon },
+  { label: 'LinkedIn', href: 'https://linkedin.com', icon: LinkedInIcon },
 ];
 ---
 
@@ -17,12 +20,15 @@ const socials = [
       </div>
 
       <div class="flex flex-wrap items-center gap-6">
-        {socials.map((item) => (
-          <a href={item.href} target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-zinc-100">
-            <img src={item.icon} alt="" class="h-4 w-4" />
-            {item.label}
-          </a>
-        ))}
+        {socials.map((item) => {
+          const Icon = item.icon;
+          return (
+            <a href={item.href} target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-zinc-100">
+              <Icon class="h-4 w-4" aria-hidden="true" />
+              {item.label}
+            </a>
+          );
+        })}
       </div>
     </div>
 

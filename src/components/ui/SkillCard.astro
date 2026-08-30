@@ -1,11 +1,12 @@
 ---
 interface Props {
 	title: string;
-	icon: string;
+	icon: any;
 	items: string[];
 }
 
 const { title, icon, items } = Astro.props;
+const Icon = icon;
 ---
 
 <div
@@ -17,7 +18,7 @@ const { title, icon, items } = Astro.props;
 		>
 			{title}
 		</h3>
-		<img src={icon} alt="" class="h-5 w-5" />
+		<Icon class="h-5 w-5" aria-hidden="true" />
 	</div>
 
 	<ul class="space-y-3">

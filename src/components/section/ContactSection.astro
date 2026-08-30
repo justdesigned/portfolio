@@ -1,14 +1,13 @@
 ---
-const socials = [
-  { label: 'GitHub', href: 'https://github.com', icon: '/figma/5edaa537-f690-4784-9a78-0983f719cc0e.svg' },
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: '/figma/ec78c76b-9d98-4bdc-8dd1-6bcbecfac283.svg' },
-  { label: 'Email', href: 'mailto:hello@alexcarter.dev', icon: '/figma/44ffddcf-9239-4007-9491-6d5003420e41.svg' },
-];
+import { Image } from 'astro:assets';
+import contactGlow from '../../assets/background/contact-glow.svg';
+import EmailIcon from '../../assets/icons/email.svg';
+import ArrowUpRightIcon from '../../assets/icons/arrow-up-right.svg';
 ---
 
 <section id="contact" class="relative overflow-hidden px-5 py-24 md:px-10 xl:px-20">
   <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-80">
-    <img src="/figma/4652d998-0bc7-4e7e-98e9-133257fe88a5.svg" alt="" class="h-[400px] w-[800px]" />
+    <Image src={contactGlow} alt="" width={800} height={400} class="h-[400px] w-[800px]" />
   </div>
 
   <div class="relative mx-auto max-w-[800px] rounded-[2rem] border border-white/5 bg-[#0b0b10]/60 px-6 py-20 text-center shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur-sm md:px-10">
@@ -30,11 +29,11 @@ const socials = [
         class="inline-flex items-center gap-3 rounded-lg px-7 py-3.5 text-[15px] font-semibold text-zinc-50 transition-colors hover:text-cyan-200"
       >
         <span>Send Me a Message</span>
-        <img src="/figma/34bb152d-0010-47d0-9a49-6a36ebbca635.svg" alt="" class="h-4 w-4" />
+        <ArrowUpRightIcon class="h-4 w-4" aria-hidden="true" />
       </a>
 
       <div class="flex items-center gap-2 text-zinc-50">
-        <img src="/figma/44ffddcf-9239-4007-9491-6d5003420e41.svg" alt="" class="h-4 w-4" />
+        <EmailIcon class="h-4 w-4" aria-hidden="true" />
         <a href="mailto:hello@alexcarter.dev" class="font-mono-code text-[15px] text-zinc-50">
           hello@alexcarter.dev
         </a>

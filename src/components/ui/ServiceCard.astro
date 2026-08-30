@@ -3,10 +3,11 @@ interface Props {
 	number: string;
 	title: string;
 	description: string;
-	icon: string;
+	icon: any;
 }
 
 const { number, title, description, icon } = Astro.props;
+const Icon = icon;
 ---
 
 <article
@@ -18,7 +19,7 @@ const { number, title, description, icon } = Astro.props;
 		>
 			{number}
 		</span>
-		<img src={icon} alt="" class="h-5 w-5" />
+		<Icon class="h-5 w-5" aria-hidden="true" />
 	</div>
 
 	<div class="space-y-3">

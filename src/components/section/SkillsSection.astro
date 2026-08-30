@@ -1,26 +1,30 @@
 ---
 import SectionHeader from '../ui/SectionHeader.astro';
 import SkillCard from '../ui/SkillCard.astro';
+import SkillFrontendIcon from '../../assets/icons/skill-frontend.svg';
+import SkillBackendIcon from '../../assets/icons/skill-backend.svg';
+import SkillToolsIcon from '../../assets/icons/skill-tools.svg';
+import SkillOtherIcon from '../../assets/icons/skill-other.svg';
 
 const skillGroups = [
 	{
 		title: 'Frontend',
-		icon: '/figma/b28864a1-6eaf-431e-a352-cd7d66c8415b.svg',
+		icon: SkillFrontendIcon,
 		items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
 	},
 	{
 		title: 'Backend',
-		icon: '/figma/dadec6cd-cedc-49f1-8394-dddb26b7e0ef.svg',
+		icon: SkillBackendIcon,
 		items: ['Node.js', 'Express', 'PostgreSQL', 'Redis'],
 	},
 	{
 		title: 'Tools & Workflow',
-		icon: '/figma/31610b32-fcd2-4f59-86a9-6dd0b29a6d0b.svg',
+		icon: SkillToolsIcon,
 		items: ['Git', 'Docker', 'Vercel', 'Figma'],
 	},
 	{
 		title: 'Other',
-		icon: '/figma/96e92d2a-af11-4ae9-bf8e-1e0e182e8d04.svg',
+		icon: SkillOtherIcon,
 		items: ['REST APIs', 'GraphQL', 'CI/CD', 'Testing'],
 	},
 ];
