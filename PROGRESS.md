@@ -12,20 +12,20 @@
 ### Feature Status
 
 - **Total Features**: 11
-- **Passing**: 8 (Hero, Header, About, Skills, Projects, Services, Contact, Footer)
+- **Passing**: 9 (Hero, Header, About, Skills, Projects, Services, Contact, Footer, UI migration)
 - **In Progress**: 0
 - **Blocked**: 0
-- **Not Started**: 3 (Component migrations, Image optimization)
+- **Not Started**: 2 (Section migration already complete; next: image optimization)
 
 ### Highest Priority Unfinished Feature
 
-**Feature #9**: Migrate UI Components to `ui/` folder
+**Feature #11**: Migrate `<img>` to `<Image />`
 
-- Move ProjectCard, ServiceCard, SkillCard, SectionHeader to `src/components/ui/`
-- Update import paths
-- Verify builds successfully
+- Replace plain image tags in project/service/other cards
+- Move image assets to `src/assets/images/` if needed
+- Validate optimized output and accessibility
 
-**Alternative Priority**: Feature #11 (Migrate `<img>` to `<Image />`)
+**Recent Completed**: Feature #10 (Section migration)
 
 ### Current Blocker
 
@@ -107,6 +107,36 @@ None
 
 1. Proceed to Feature #10 (section migration) or
 2. Begin Feature #11 (image optimization) if the design migration is the next priority
+
+---
+
+### Session 3 — 2026-08-30
+
+**Goal**: Complete Feature #10 — move page-section components into `src/components/section/` and keep asset imports valid after relocation.
+
+**Completed**:
+
+1. ✅ Moved `Header.astro`, `Hero.astro`, `AboutSection.astro`, `SkillsSection.astro`, `ProjectsSection.astro`, `ServicesSection.astro`, `ContactSection.astro`, and `Footer.astro` into `src/components/section/`.
+2. ✅ Updated page imports in `src/pages/index.astro` to the new paths.
+3. ✅ Fixed nested component imports (`../ui/...`) and asset imports (`../../assets/...`) after the move.
+4. ✅ Verified `pnpm lint:eslint`, `pnpm lint:style`, and `pnpm build` pass.
+
+**Verification Run**:
+
+- ESLint: ✅ Passed
+- Stylelint: ✅ Passed
+- Astro build: ✅ Passed
+
+**Evidence Captured**:
+
+- Section components now live under `src/components/section/`
+- Layout remains functionally unchanged after the refactor
+- Build remains green with updated relative paths
+
+**Best Next Action**:
+
+1. Move to Feature #11 (image optimization) or
+2. Review the remaining mobile/tablet styling adjustments requested by the updated Figma layouts
 
 ---
 

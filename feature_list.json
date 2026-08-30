@@ -208,7 +208,7 @@
       "area": "refactoring",
       "title": "Migrate Section Components to section/ Folder",
       "user_visible_behavior": "No user-visible changes - internal code organization improvement",
-      "status": "not_started",
+      "status": "passing",
       "verification": [
         "Move Header.astro to src/components/section/Header.astro",
         "Move Hero.astro to src/components/section/Hero.astro",
@@ -223,7 +223,27 @@
         "Run pnpm build to verify successful build",
         "Test homepage renders correctly"
       ],
-      "evidence": {},
+      "evidence": {
+        "moved_components": [
+          "src/components/section/Header.astro",
+          "src/components/section/Hero.astro",
+          "src/components/section/AboutSection.astro",
+          "src/components/section/SkillsSection.astro",
+          "src/components/section/ProjectsSection.astro",
+          "src/components/section/ServicesSection.astro",
+          "src/components/section/ContactSection.astro",
+          "src/components/section/Footer.astro"
+        ],
+        "updated_imports": [
+          "src/pages/index.astro",
+          "src/components/section/AboutSection.astro",
+          "src/components/section/SkillsSection.astro",
+          "src/components/section/ProjectsSection.astro",
+          "src/components/section/ServicesSection.astro"
+        ],
+        "verification_command": "pnpm lint:eslint && pnpm lint:style && pnpm build",
+        "result": "passed"
+      },
       "notes": "Per component-structure.instructions.md, page sections should live in section/ folder. This is a refactoring task with no functional changes."
     },
     {
@@ -253,10 +273,10 @@
     "last_updated": "2026-08-30",
     "total_features": 11,
     "status_counts": {
-      "passing": 8,
+      "passing": 9,
       "in_progress": 0,
       "blocked": 0,
-      "not_started": 3
+      "not_started": 2
     }
   }
 }
