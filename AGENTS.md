@@ -50,10 +50,10 @@ This project uses `feature_list.json` to track functionality and verification st
 
 ### Current State
 
-- **Passing**: 8 features (Hero, Header, About, Skills, Projects, Services, Contact, Footer)
-- **Not Started**: 3 features (component migrations, image optimization)
+- **Passing**: 11 features (core landing page sections, UI migration, section migration, image optimization)
+- **Not Started**: 1 feature (adapt CV text for homepage copy)
 
-**Next Priority**: Feature #9 (Migrate UI Components) or Feature #11 (Images Migration)
+**Next Priority**: Feature #12 (Adapt CV text for portfolio copy)
 
 ## Session Continuity
 
@@ -90,6 +90,12 @@ The **Astro Developer** agent handles all Astro and portfolio-related tasks. It'
 - Anything in `src/` directory
 
 **Location**: `.github/agents/astro-developer.agent.md`
+
+## Additional Agent: Content Copywriter
+
+The **Content Copywriter** agent adapts personal resume material from `docs/CV.md` into website-ready copy for the homepage and sections, while keeping the messaging factual and conversion-focused.
+
+**Location**: `.github/agents/content-copywriter.agent.md`
 
 ---
 

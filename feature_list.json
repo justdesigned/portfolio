@@ -279,18 +279,47 @@
         "result": "passed"
       },
       "notes": "Per images.instructions.md, content images should use optimized local assets. The active portfolio components now use local Astro asset imports instead of public/figma string URLs, with SVG icons rendered via Astro SVG components."
+    },
+    {
+      "id": "content-copy-adaptation",
+      "priority": 12,
+      "area": "content",
+      "title": "Adapt CV Text for Portfolio Copy",
+      "user_visible_behavior": "The portfolio homepage uses polished, accurate copy adapted from the resume in docs/CV.md, with clearer messaging and stronger positioning",
+      "status": "not_started",
+      "verification": [
+        "Read docs/CV.md and extract facts, strengths, and experience highlights",
+        "Identify which homepage sections need rewritten copy (hero, about, services, experience, contact)",
+        "Adapt resume language into concise portfolio-ready text without inventing new claims",
+        "Update the relevant Astro section components or page file with the refined copy",
+        "Review readability, tone, and consistency against the existing design",
+        "Run pnpm lint:fix and pnpm build to confirm the content change does not introduce issues"
+      ],
+      "evidence": {
+        "source_file": "docs/CV.md",
+        "target_components": [
+          "src/pages/index.astro",
+          "src/components/section/Hero.astro",
+          "src/components/section/AboutSection.astro",
+          "src/components/section/ServicesSection.astro",
+          "src/components/section/ContactSection.astro"
+        ],
+        "verification_command": "pnpm lint:fix && pnpm build",
+        "result": "pending"
+      },
+      "notes": "This task uses the resume as a source of truth and rewrites it into homepage copy appropriate for a portfolio site. The Content Copywriter agent coordinates this adaptation and keeps messaging aligned with the candidate's experience."
     }
   ],
   "metadata": {
     "project": "Portfolio Website",
     "framework": "Astro 7+ with React 19",
     "last_updated": "2026-08-30",
-    "total_features": 11,
+    "total_features": 12,
     "status_counts": {
       "passing": 11,
       "in_progress": 0,
       "blocked": 0,
-      "not_started": 0
+      "not_started": 1
     }
   }
 }

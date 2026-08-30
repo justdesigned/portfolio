@@ -11,11 +11,11 @@
 
 ### Feature Status
 
-- **Total Features**: 11
+- **Total Features**: 12
 - **Passing**: 11 (Hero, Header, About, Skills, Projects, Services, Contact, Footer, UI migration, section migration, image migration)
 - **In Progress**: 0
 - **Blocked**: 0
-- **Not Started**: 0
+- **Not Started**: 1 (content copy adaptation from `docs/CV.md`)
 
 ### Latest Completed
 
@@ -166,6 +166,35 @@ None
 **Known Risks**:
 
 - The updated tablet/mobile Figma direction may still require visual polish beyond the structural and asset migration work, but the implementation is stable and build-verified.
+
+---
+
+### Session 5 — 2026-08-30
+
+**Goal**: Add a dedicated copy-adaptation agent and register the follow-up portfolio content task based on `docs/CV.md`.
+
+**Completed**:
+
+1. ✅ Created `.github/agents/content-copywriter.agent.md` to adapt resume text into website-ready portfolio copy.
+2. ✅ Added the new agent to `AGENTS.md` so it is discoverable alongside the Astro developer agent.
+3. ✅ Added a new feature entry in `feature_list.json` for adapting CV-derived copy to the homepage and section content.
+4. ✅ Updated the feature counts in `PROGRESS.md` to reflect the new task queue.
+
+**Verification Run**:
+
+- JSON integrity check: ✅ `feature_list.json` remains valid JSON
+- Project build: ⏳ Not needed for this metadata/config-only change, but the project remains build-safe pending final verification if the content task is implemented
+
+**Evidence Captured**:
+
+- New copywriting agent is configured to reference `docs/CV.md`
+- Feature tracking now includes a dedicated copy adaptation task
+- Portfolio project status remains aligned with the new content workflow
+
+**Best Next Action**:
+
+1. Use the new `Content Copywriter` agent to rewrite hero/about/service copy directly from `docs/CV.md`, or
+2. Implement the approved copy updates in the relevant homepage section components
 
 ---
 
