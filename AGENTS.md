@@ -67,11 +67,14 @@ pnpm preview              # Preview production build locally
 
 ```
 src/
-├── pages/       # Routes (auto-generated from filenames)
-├── components/  # Reusable components
-├── layouts/     # Page layouts and templates
-├── styles/      # Global styles (Tailwind CSS)
-└── assets/      # Images, fonts, static files
+├── pages/           # Routes (auto-generated from filenames)
+├── components/      # Reusable components
+├── layouts/         # Page layouts and templates
+├── styles/          # Global styles (Tailwind CSS)
+└── assets/          # Images, fonts, static files
+    └── images/      # Content images
+    └── icons/       # SVG icons
+    └── background/  # Background images
 ```
 
 ---
@@ -118,4 +121,5 @@ Full Astro documentation: https://docs.astro.build
 - [React Component Integration](https://docs.astro.build/en/guides/framework-components/)
 - [Content Collections](https://docs.astro.build/en/guides/content-collections/)
 - [Styling & Tailwind](https://docs.astro.build/en/guides/styling/)
+- [Images](https://docs.astro.build/en/guides/images/)
 - [Internationalization (i18n)](https://docs.astro.build/en/guides/internationalization/)

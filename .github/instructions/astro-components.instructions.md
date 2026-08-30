@@ -65,18 +65,6 @@ interface Props {
 </div>
 ```
 
-### Scoped CSS
-
-CSS is automatically scoped to the component:
-
-```astro
-<style>
-	h3 {
-		color: red; /* Only affects h3 in this component */
-	}
-</style>
-```
-
 ### Tailwind CSS
 
 Use Tailwind utility classes for styling (preferred approach):
