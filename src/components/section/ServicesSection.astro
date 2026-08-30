@@ -1,7 +1,7 @@
 ---
 import SectionHeader from '../ui/SectionHeader.astro';
 import ServiceCard from '../ui/ServiceCard.astro';
-import ServiceWebIcon from '../../assets/icons/service-web.svg';
+import ArrowRightUpIcon from '../../assets/icons/arrow-up-right.svg';
 
 const services = [
 	{
@@ -9,30 +9,31 @@ const services = [
 		title: 'Web Development',
 		description:
 			'From landing pages to complex web apps — fast, accessible, SEO-friendly builds using modern frameworks.',
-		icon: ServiceWebIcon,
+		icon: ArrowRightUpIcon,
 	},
 	{
 		number: '02',
 		title: 'UI Implementation',
 		description:
 			'Pixel-perfect translation of Figma designs into responsive, production-ready code with smooth interactions.',
-		icon: ServiceWebIcon,
+		icon: ArrowRightUpIcon,
 	},
 	{
 		number: '03',
 		title: 'Technical Consulting',
 		description:
 			'Architecture reviews, performance audits, and strategic guidance for teams scaling their frontend stack.',
-		icon: ServiceWebIcon,
+		icon: ArrowRightUpIcon,
 	},
 ];
 ---
 
-<section id="services" class="px-4 py-20 sm:px-5 md:px-10 md:py-24 xl:px-20">
-	<div class="mx-auto max-w-[1440px]">
-		<SectionHeader eyebrow="04 / Solutions" title="What I Do" />
+<section id='services' class='px-4 py-20 sm:px-5 md:px-10 md:py-24 xl:px-20'>
+	<div class='mx-auto max-w-360'>
+		<SectionHeader eyebrow='04 / Solutions' title='What I Do' />
 
-		<div class="mt-10 grid gap-6 md:mt-12 md:grid-cols-2 xl:mt-16 xl:grid-cols-3">
+		<div
+			class='mt-10 grid gap-6 md:mt-12 md:grid-cols-2 xl:mt-16 xl:grid-cols-3'>
 			{
 				services.map((service) => (
 					<ServiceCard

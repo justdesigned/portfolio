@@ -1,5 +1,4 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="8" y="8" width="48" height="48" rx="12" fill="#0F172A"/>
-  <path d="M18 22L32 16L46 22V42L32 48L18 42V22Z" fill="#22D3EE" fill-opacity="0.25"/>
-  <path d="M32 16V48M18 22L32 28L46 22M18 42L32 36L46 42" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+  <path stroke="#8b5cf6" stroke-linecap="round" stroke-width="2"
+    d="M7.5 2.5H3.333a.833.833 0 0 0-.833.833V7.5c0 .46.373.833.833.833H7.5c.46 0 .833-.373.833-.833V3.333A.833.833 0 0 0 7.5 2.5ZM16.667 2.5H12.5a.833.833 0 0 0-.833.833V7.5c0 .46.373.833.833.833h4.167c.46 0 .833-.373.833-.833V3.333a.833.833 0 0 0-.833-.833ZM16.667 11.667H12.5a.833.833 0 0 0-.833.833v4.167c0 .46.373.833.833.833h4.167c.46 0 .833-.373.833-.833V12.5a.833.833 0 0 0-.833-.833ZM7.5 11.667H3.333a.833.833 0 0 0-.833.833v4.167c0 .46.373.833.833.833H7.5c.46 0 .833-.373.833-.833V12.5a.833.833 0 0 0-.833-.833Z" />
 </svg>
