@@ -10,45 +10,42 @@ const stats = [
 ];
 ---
 
-<section id="about" class="py-20 sm:py-24 lg:py-35">
-	<div class="mx-auto max-w-7xl px-4 sm:px-5 md:px-7 lg:px-8">
-		<SectionHeader eyebrow="01 / Profile" title="About Me" />
+<section id='about' class='py-20 sm:py-24 lg:py-35'>
+	<div class='mx-auto max-w-7xl px-4 sm:px-5 md:px-7 lg:px-8'>
+		<SectionHeader eyebrow='01 / Profile' title='About Me' />
 
 		<div
-			class="mt-10 grid items-center gap-10 md:mt-12 lg:mt-16 lg:grid-cols-[480px_minmax(0,1fr)] lg:gap-16"
-		>
+			class='mt-10 grid items-center gap-10 md:mt-12 lg:mt-16 lg:grid-cols-[480px_minmax(0,1fr)] lg:gap-16'>
 			<div
-				class="relative overflow-hidden rounded-2xl border border-white/5 bg-gray-900"
-			>
+				class='relative overflow-hidden rounded-2xl border border-white/5 bg-gray-900'>
 				<Image
 					src={avatarImage}
-					alt="Alex Carter portrait"
-					class="h-[22rem] w-full object-cover md:h-[26rem] lg:h-130"
+					alt='Alex Carter portrait'
+					class='h-88 w-full object-cover md:h-104 lg:h-130'
 				/>
 
 				<div
-					class="absolute inset-0 flex flex-col justify-between p-6 font-mono-code text-[12px] uppercase tracking-[0.08em]"
-				>
-					<div class="flex items-start justify-between gap-3 text-cyan-300">
+					class='absolute inset-0 flex flex-col justify-between p-6 font-mono-code text-[12px] uppercase tracking-[0.08em]'>
+					<div class='flex items-start justify-between gap-3 text-cyan-300'>
 						<span>[INIT_CORE_PORTRAIT]</span>
-						<span class="text-violet-400">// EST. 2018</span>
+						<span class='text-violet-400'>// EST. 2018</span>
 					</div>
 
-					<div class="flex items-center justify-between gap-3 text-zinc-300">
+					<div class='flex items-center justify-between gap-3 text-zinc-300'>
 						<span>ALEX CARTER</span>
 						<span>SYS: ACTIVE</span>
 					</div>
 				</div>
 			</div>
 
-			<div class="space-y-7">
+			<div class='space-y-7'>
 				<p
-					class="font-display text-[clamp(2.1rem,4vw,2.3rem)] font-semibold tracking-[-0.04em] text-zinc-50"
-				>
+					class='font-display text-[clamp(2.1rem,4vw,2.3rem)] font-semibold tracking-[-0.04em] text-zinc-50'>
 					Bridging the gap between beautiful design and rigid engineering.
 				</p>
 
-				<div class="space-y-5 text-base leading-7 text-gray-400 sm:text-[1rem] sm:leading-8">
+				<div
+					class='space-y-5 text-base leading-7 text-gray-400 sm:text-[1rem] sm:leading-8'>
 					<p>
 						I'm Alex Carter — a full-stack developer with 6+ years of experience
 						building fast, accessible, and visually refined web applications.
@@ -62,16 +59,15 @@ const stats = [
 					</p>
 				</div>
 
-				<div class="flex flex-wrap gap-6 pt-2 sm:gap-8 lg:gap-10 lg:pt-4">
+				<div class='flex flex-wrap gap-6 pt-2 sm:gap-8 lg:gap-10 lg:pt-4'>
 					{
 						stats.map((stat) => (
-							<div class="flex min-w-[7.5rem] flex-col gap-1">
+							<div class='flex min-w-30 flex-col gap-1'>
 								<span
-									class={`font-display text-[1.8rem] font-extrabold tracking-[-0.06em] sm:text-[2.1rem] lg:text-[2.25rem] ${stat.accent}`}
-								>
+									class={`font-display text-[1.8rem] font-extrabold tracking-[-0.06em] sm:text-[2.1rem] lg:text-[2.25rem] ${stat.accent}`}>
 									{stat.value}
 								</span>
-								<span class="font-mono-code text-[10px] uppercase tracking-[0.12em] text-gray-400 sm:text-[11px]">
+								<span class='font-mono-code text-[10px] uppercase tracking-[0.12em] text-gray-400 sm:text-[11px]'>
 									{stat.label}
 								</span>
 							</div>
