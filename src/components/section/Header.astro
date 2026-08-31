@@ -1,4 +1,6 @@
 ---
+import MobileMenu from '../ui/MobileMenu.tsx';
+
 const navItems = [
 	{ label: 'About', href: '#about' },
 	{ label: 'Skills', href: '#skills' },
@@ -44,11 +46,15 @@ const navItems = [
 			}
 		</nav>
 
-		<a
-			href="#contact"
-			class="inline-flex items-center rounded-md border border-cyan-400/60 bg-cyan-500/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-cyan-300 transition-colors hover:border-cyan-300 hover:text-cyan-200 sm:px-4 sm:text-[11px]"
-		>
-			Available for Hire
-		</a>
+		<div class="flex items-center gap-3">
+			<a
+				href="#contact"
+				class="hidden items-center rounded-md border border-cyan-400/60 bg-cyan-500/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-cyan-300 transition-colors hover:border-cyan-300 hover:text-cyan-200 sm:px-4 sm:text-[11px] md:inline-flex"
+			>
+				Available for Hire
+			</a>
+
+			<MobileMenu navItems={navItems} client:load />
+		</div>
 	</div>
 </header>

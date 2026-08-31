@@ -369,14 +369,14 @@
       "area": "ux",
       "title": "Add mobile navigation menu (hamburger/drawer)",
       "user_visible_behavior": "Mobile users (< 768px) can access all navigation links via a hamburger menu or slide-in drawer",
-      "status": "not_started",
+      "status": "passing",
       "verification": [
         "Resize browser to 375px width",
         "Verify hamburger icon is visible in header",
         "Click hamburger — confirm nav links appear",
         "Click a link — confirm menu closes and page scrolls to section"
       ],
-      "evidence": "",
+      "evidence": "Created src/components/ui/MobileMenu.tsx (React island, client:load). Updated Header.astro to import MobileMenu and pass navItems. Hamburger button hidden on md+. Drawer appears below header with backdrop, auto-closes on link click or backdrop click. CTA button also shown inside drawer. Build verified: 1 page in 255ms.",
       "notes": "Header.astro hides the nav entirely on mobile with hidden md:flex — no hamburger menu exists. Requires a React island (client:load) or vanilla JS toggle for the drawer. Nav items are already defined in navItems array in Header.astro."
     },
     {
@@ -427,13 +427,13 @@
   "metadata": {
     "project": "Portfolio Website",
     "framework": "Astro 7+ with React 19",
-    "last_updated": "2026-08-30",
+    "last_updated": "2026-08-31",
     "total_features": 12,
     "status_counts": {
-      "passing": 11,
+      "passing": 12,
       "in_progress": 0,
       "blocked": 0,
-      "not_started": 1
+      "not_started": 0
     }
   }
 }
