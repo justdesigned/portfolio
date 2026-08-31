@@ -1,27 +1,5 @@
 @import 'tailwindcss';
 
-@theme {
-	--color-cyan-500: #06b6d4;
-	--color-purple-500: #8b5cf6;
-	--color-gray-50: #f4f4f5;
-	--color-gray-400: #a1a1aa;
-	--color-gray-100: #f5f5fa;
-	--color-gray-900: #141417;
-	--color-gray-950: #09090b;
-}
-
-:root {
-	--bg: #09090b;
-	--panel: #141417;
-	--panel-strong: #1e1e24;
-	--line: rgb(255 255 255 / 6%);
-	--text: #f4f4f5;
-	--muted: #a1a1aa;
-	--primary: #8b5cf6;
-	--secondary: #06b6d4;
-	--shadow: rgb(139 92 246 / 18%);
-}
-
 @layer base {
 	html {
 		scroll-behavior: smooth;
