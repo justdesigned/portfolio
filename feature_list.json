@@ -319,6 +319,109 @@
         "notes": "All placeholder Alex Carter copy replaced with real Vasyl Drevko data from CV.md. SEO meta updated. Build passed."
       },
       "notes": "This task uses the resume as a source of truth and rewrites it into homepage copy appropriate for a portfolio site. The Content Copywriter agent coordinates this adaptation and keeps messaging aligned with the candidate's experience."
+    },
+    {
+      "id": "fix-prettier-lint",
+      "priority": 13,
+      "area": "dx",
+      "title": "Fix Prettier lint errors in instruction files",
+      "user_visible_behavior": "pnpm lint passes without errors — CI pipeline is unblocked",
+      "status": "not_started",
+      "verification": [
+        "Run pnpm lint and confirm exit code 0",
+        "Confirm no Prettier parse errors in .github/instructions/*.md"
+      ],
+      "evidence": "",
+      "notes": "Prettier cannot parse component-structure.instructions.md (line 6: [...] syntax) and react-components.instructions.md (markdown heading inside JS code block). Fix: add .github/instructions/ to .prettierignore OR fix the code-block syntax in those files."
+    },
+    {
+      "id": "fix-css-vars-body",
+      "priority": 14,
+      "area": "styles",
+      "title": "Remove or fix undefined CSS variables in global.css body",
+      "user_visible_behavior": "Body background and color are explicitly defined — no silent no-ops from undefined CSS vars",
+      "status": "not_started",
+      "verification": [
+        "Inspect body styles in DevTools — no var(--bg) or var(--text) references",
+        "Run pnpm build without errors"
+      ],
+      "evidence": "",
+      "notes": "global.css references var(--bg) and var(--text) in body which were removed in commit 5a7bcd0. These declarations silently do nothing. Remove them or replace with explicit Tailwind-compatible values (e.g. bg-zinc-950 / text-zinc-50 are applied via index.astro wrapper div)."
+    },
+    {
+      "id": "fix-typescript-any-types",
+      "priority": 15,
+      "area": "dx",
+      "title": "Replace any types with proper TypeScript types in UI components",
+      "user_visible_behavior": "Type errors caught at build time — no accidental prop mismatches",
+      "status": "not_started",
+      "verification": [
+        "Run pnpm build with no TypeScript errors",
+        "Confirm image prop in ProjectCard uses ImageMetadata from astro:assets",
+        "Confirm icon prop in ServiceCard and SkillCard uses a proper component type"
+      ],
+      "evidence": "",
+      "notes": "ProjectCard.astro: image prop is typed as any — replace with ImageMetadata from astro:assets. ServiceCard.astro and SkillCard.astro: icon prop is typed as any — replace with appropriate SVG component type (e.g. AstroComponentFactory or a custom ComponentType)."
+    },
+    {
+      "id": "mobile-navigation",
+      "priority": 16,
+      "area": "ux",
+      "title": "Add mobile navigation menu (hamburger/drawer)",
+      "user_visible_behavior": "Mobile users (< 768px) can access all navigation links via a hamburger menu or slide-in drawer",
+      "status": "not_started",
+      "verification": [
+        "Resize browser to 375px width",
+        "Verify hamburger icon is visible in header",
+        "Click hamburger — confirm nav links appear",
+        "Click a link — confirm menu closes and page scrolls to section"
+      ],
+      "evidence": "",
+      "notes": "Header.astro hides the nav entirely on mobile with hidden md:flex — no hamburger menu exists. Requires a React island (client:load) or vanilla JS toggle for the drawer. Nav items are already defined in navItems array in Header.astro."
+    },
+    {
+      "id": "seo-og-meta-tags",
+      "priority": 17,
+      "area": "seo",
+      "title": "Add Open Graph, Twitter Card, favicon and canonical meta tags",
+      "user_visible_behavior": "Page shows rich preview when shared on LinkedIn, Twitter/X, Telegram; favicon visible in browser tab",
+      "status": "not_started",
+      "verification": [
+        "Paste URL into https://opengraph.xyz and confirm og:title, og:description, og:image appear",
+        "Confirm <link rel=icon> renders favicon in browser tab",
+        "Confirm <link rel=canonical> is present in page source",
+        "Check Twitter card via https://cards-dev.twitter.com/validator"
+      ],
+      "evidence": "",
+      "notes": "Layout.astro is missing: og:title, og:description, og:image, og:url, twitter:card, twitter:title, twitter:image, link[rel=canonical], link[rel=icon], link[rel=apple-touch-icon]. Add an OG image asset (1200x630) to public/ and reference it. Consider exposing ogImage as a Layout prop."
+    },
+    {
+      "id": "contact-cta-rename-or-form",
+      "priority": 18,
+      "area": "ux",
+      "title": "Fix misleading CTA label in Contact section or add contact form",
+      "user_visible_behavior": "CTA label accurately reflects its action — no UX confusion between \"send message\" and opening email client",
+      "status": "not_started",
+      "verification": [
+        "Click the primary CTA in the Contact section",
+        "Verify the action matches the label (either opens email client and label says \"Email Me\" or a form appears)"
+      ],
+      "evidence": "",
+      "notes": "ContactSection.astro: the button \"Send Me a Message\" links to mailto: which opens the user's email client — not a form. Either rename to \"Send an Email\" / \"Email Me Directly\", or implement a contact form (e.g. Netlify Forms, Formspree, or a React island)."
+    },
+    {
+      "id": "dynamic-copyright-year",
+      "priority": 19,
+      "area": "content",
+      "title": "Make copyright year dynamic in Footer",
+      "user_visible_behavior": "Footer always shows the current year without manual updates",
+      "status": "not_started",
+      "verification": [
+        "Inspect footer in browser — year matches current year",
+        "Confirm no hardcoded year string in Footer.astro"
+      ],
+      "evidence": "",
+      "notes": "Footer.astro line 62: year is hardcoded as 2025. Replace with: const year = new Date().getFullYear(); and use {year} in the template. Low effort, high correctness."
     }
   ],
   "metadata": {
