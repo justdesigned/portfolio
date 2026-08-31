@@ -12,20 +12,26 @@
 ### Feature Status
 
 - **Total Features**: 12
-- **Passing**: 11 (Hero, Header, About, Skills, Projects, Services, Contact, Footer, UI migration, section migration, image migration)
+- **Passing**: 12 (Hero, Header, About, Skills, Projects, Services, Contact, Footer, UI migration, section migration, image migration, content copy adaptation)
 - **In Progress**: 0
 - **Blocked**: 0
-- **Not Started**: 1 (content copy adaptation from `docs/CV.md`)
+- **Not Started**: 0
 
 ### Latest Completed
 
-**Feature #11**: Migrate `<img>` to `<Image />`
+**Feature #12**: Adapt CV Text for Portfolio Copy
 
-- Replaced plain image/tag usage with Astro asset imports and local SVG components
-- Moved remaining assets under `src/assets/images/` and `src/assets/icons/`
-- Verified responsive and optimized output via project build and lint checks
+- Replaced all placeholder "Alex Carter" copy with real Vasyl Drevko data from `docs/CV.md`
+- Updated SEO meta title and description in `Layout.astro`
+- Rewrote Hero: headline, subheading, badge with accurate positioning and keywords
+- Updated About: real name, ContentStream OÜ background, factual stats (5+ yrs, 40+ projects, 10+ yrs freelancing)
+- Replaced Skills: accurate tech stack from CV (Redux Toolkit, Zustand, TanStack Query, WordPress, Laravel)
+- Rewrote Services: React/Next.js Development, UI Implementation, Frontend Consulting
+- Updated Contact: real email `vasiadrevko@gmail.com`, updated CTA copy
+- Updated Header & Footer: `VD` initials, real name, real LinkedIn URL
+- Build passed: `pnpm build` ✅
 
-**Recent Completed**: Feature #11 (image migration)
+**Recent Completed**: Feature #12 (content copy adaptation)
 
 ### Current Blocker
 
@@ -34,6 +40,33 @@ None
 ---
 
 ## Session Log
+
+### Session 2 — 2026-08-31
+
+**Goal**: Feature #12 — Adapt CV text for portfolio copy
+
+**Completed**:
+
+1. ✅ Read `docs/CV.md` — extracted real data: name, email, LinkedIn, experience, tech stack
+2. ✅ Updated `src/layouts/Layout.astro` — SEO `<title>` and `<meta description>` with keywords
+3. ✅ Updated `src/components/section/Hero.astro` — headline, subheading, badge
+4. ✅ Updated `src/components/section/AboutSection.astro` — name, bio, stats, alt text, year
+5. ✅ Updated `src/components/section/SkillsSection.astro` — real tech stack from CV
+6. ✅ Updated `src/components/section/ServicesSection.astro` — services aligned with actual expertise
+7. ✅ Updated `src/components/section/ContactSection.astro` — real email, updated CTA
+8. ✅ Updated `src/components/section/Header.astro` — VD initials, real name
+9. ✅ Updated `src/components/section/Footer.astro` — VD initials, real name, real LinkedIn URL, © 2025
+
+**Verification Run**:
+
+- `pnpm lint:fix`: ✅ All source files formatted (pre-existing errors in docs/ are unrelated)
+- `pnpm build`: ✅ 1 page built successfully in 320ms
+
+**Known Risks**:
+
+- None — all changes are content-only, no structural or layout changes
+
+---
 
 ### Session 1 — 2026-08-30
 

@@ -9,29 +9,35 @@ const navItems = [
 ---
 
 <header
-	class='sticky top-0 z-50 border-b border-white/5 bg-gray-950/90 backdrop-blur-md'>
+	class="sticky top-0 z-50 border-b border-white/5 bg-gray-950/90 backdrop-blur-md"
+>
 	<div
-		class='mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-5 md:px-7 lg:px-8'>
+		class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-5 md:px-7 lg:px-8"
+	>
 		<a
-			href='#top'
-			class='flex items-center gap-2.5 text-zinc-50 sm:gap-3'
-			aria-label='Alex Carter home'>
+			href="#top"
+			class="flex items-center gap-2.5 text-zinc-50 sm:gap-3"
+			aria-label="Vasyl Drevko home"
+		>
 			<span
-				class='flex size-8 items-center justify-center rounded-md bg-violet-500/20 text-xs font-black text-zinc-50 sm:size-9'>
-				AC
+				class="flex size-8 items-center justify-center rounded-md bg-violet-500/20 text-xs font-black text-zinc-50 sm:size-9"
+			>
+				VD
 			</span>
 			<span
-				class='font-display text-base font-semibold tracking-[-0.04em] sm:text-lg'>
-				Alex Carter
+				class="font-display text-base font-semibold tracking-[-0.04em] sm:text-lg"
+			>
+				Vasyl Drevko
 			</span>
 		</a>
 
-		<nav class='hidden items-center gap-8 md:flex' aria-label='Main navigation'>
+		<nav class="hidden items-center gap-8 md:flex" aria-label="Main navigation">
 			{
 				navItems.map((item) => (
 					<a
 						href={item.href}
-						class='text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-100'>
+						class="text-sm font-medium text-zinc-400 transition-colors hover:text-zinc-100"
+					>
 						{item.label}
 					</a>
 				))
@@ -39,8 +45,9 @@ const navItems = [
 		</nav>
 
 		<a
-			href='#contact'
-			class='inline-flex items-center rounded-md border border-cyan-400/60 bg-cyan-500/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-cyan-300 transition-colors hover:border-cyan-300 hover:text-cyan-200 sm:px-4 sm:text-[11px]'>
+			href="#contact"
+			class="inline-flex items-center rounded-md border border-cyan-400/60 bg-cyan-500/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-cyan-300 transition-colors hover:border-cyan-300 hover:text-cyan-200 sm:px-4 sm:text-[11px]"
+		>
 			Available for Hire
 		</a>
 	</div>

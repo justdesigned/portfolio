@@ -286,7 +286,7 @@
       "area": "content",
       "title": "Adapt CV Text for Portfolio Copy",
       "user_visible_behavior": "The portfolio homepage uses polished, accurate copy adapted from the resume in docs/CV.md, with clearer messaging and stronger positioning",
-      "status": "not_started",
+      "status": "passing",
       "verification": [
         "Read docs/CV.md and extract facts, strengths, and experience highlights",
         "Identify which homepage sections need rewritten copy (hero, about, services, experience, contact)",
@@ -305,7 +305,18 @@
           "src/components/section/ContactSection.astro"
         ],
         "verification_command": "pnpm lint:fix && pnpm build",
-        "result": "pending"
+        "result": "passed",
+        "components_updated": [
+          "src/layouts/Layout.astro",
+          "src/components/section/Hero.astro",
+          "src/components/section/AboutSection.astro",
+          "src/components/section/SkillsSection.astro",
+          "src/components/section/ServicesSection.astro",
+          "src/components/section/ContactSection.astro",
+          "src/components/section/Header.astro",
+          "src/components/section/Footer.astro"
+        ],
+        "notes": "All placeholder Alex Carter copy replaced with real Vasyl Drevko data from CV.md. SEO meta updated. Build passed."
       },
       "notes": "This task uses the resume as a source of truth and rewrites it into homepage copy appropriate for a portfolio site. The Content Copywriter agent coordinates this adaptation and keeps messaging aligned with the candidate's experience."
     }
