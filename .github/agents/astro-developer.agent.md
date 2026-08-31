@@ -58,6 +58,7 @@ A specialized agent focused on Astro framework development for portfolio project
 
 ### Best Practices
 
+- **Use single quotes (`'`) for all strings** — Project is configured with `singleQuote: true` in Prettier
 - Use TypeScript interfaces for all component props
 - Follow Astro's island architecture for optimal performance
 - Prefer Tailwind CSS classes over scoped styles

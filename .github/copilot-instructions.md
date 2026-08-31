@@ -30,12 +30,13 @@ You are an expert Astro developer helping maintain and extend this portfolio web
 
 ## Guidelines
 
-1. **Astro Components**: Use `.astro` extension for Astro-specific components
-2. **React Components**: Use `.tsx` for React components, import in Astro files
-3. **Styling**: Use Tailwind CSS utility classes for styling all components
-4. **File Structure**: Keep components organized by feature/section
-5. **TypeScript**: Maintain strict type safety across the project
-6. **Routing**: Leverage Astro's file-based routing system
+1. **String Quotes**: Use single quotes (`'`) for all strings — Project is configured with `singleQuote: true` in Prettier
+2. **Astro Components**: Use `.astro` extension for Astro-specific components
+3. **React Components**: Use `.tsx` for React components, import in Astro files
+4. **Styling**: Use Tailwind CSS utility classes for styling all components
+5. **File Structure**: Keep components organized by feature/section
+6. **TypeScript**: Maintain strict type safety across the project
+7. **Routing**: Leverage Astro's file-based routing system
 
 ## Useful Resources
 

@@ -13,13 +13,14 @@ Astro 7+ portfolio website with React 19 integration, TypeScript, and Tailwind C
 
 ## Hard Constraints
 
-1. **Images**: Use `<Image />` or `<Picture />` from `astro:assets`, never plain `<img>` for content images
-2. **Component Organization**: New reusable components → `src/components/ui/`, sections → `src/components/section/`
-3. **TypeScript**: All component props must have TypeScript interfaces
-4. **Linting**: Run `pnpm lint:fix` before committing changes
-5. **Accessibility**: All images must have descriptive `alt` attributes
-6. **Tailwind**: Prefer Tailwind utility classes over scoped styles
-7. **Asset Structure**: Images → `assets/images/`, Icons → `assets/icons/`, Backgrounds → `assets/background/`
+1. **String Quotes**: Use single quotes (`'`) for all strings — Project is configured with `singleQuote: true` in Prettier
+2. **Images**: Use `<Image />` or `<Picture />` from `astro:assets`, never plain `<img>` for content images
+3. **Component Organization**: New reusable components → `src/components/ui/`, sections → `src/components/section/`
+4. **TypeScript**: All component props must have TypeScript interfaces
+5. **Linting**: Run `pnpm lint:fix` before committing changes
+6. **Accessibility**: All images must have descriptive `alt` attributes
+7. **Tailwind**: Prefer Tailwind utility classes over scoped styles
+8. **Asset Structure**: Images → `assets/images/`, Icons → `assets/icons/`, Backgrounds → `assets/background/`
 
 ## Topic Docs
 
